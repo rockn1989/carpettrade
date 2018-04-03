@@ -1,7 +1,7 @@
 /** AkzidenzGroteskPro **/
 @font-face {
   font-family: 'AkzidenzGroteskPro';
-  src: url('fonts/AkzidenzGroteskPro-Regular.eot');
+  src: url('../fonts/AkzidenzGroteskPro-Regular/AkzidenzGroteskPro-Regular.eot');
   src: local('☺'), url('../fonts/AkzidenzGroteskPro-Regular/AkzidenzGroteskPro-Regular.woff') format('woff'), url('../fonts/AkzidenzGroteskPro-Regular/AkzidenzGroteskPro-Regular.ttf') format('truetype'), url('../fonts/AkzidenzGroteskPro-Regular/AkzidenzGroteskPro-Regular.svg') format('svg');
   font-weight: 400;
   font-style: normal;
@@ -9,20 +9,20 @@
 @font-face {
   font-family: 'AkzidenzGroteskPro';
   src: url('../fonts/AkzidenzGroteskPro-Md/AkzidenzGroteskPro-Md.eot');
-  src: local('☺'), url('fonts/AkzidenzGroteskPro-Md.woff') format('woff'), url('../fonts/AkzidenzGroteskPro-Md/AkzidenzGroteskPro-Md.ttf') format('truetype'), url('../fonts/AkzidenzGroteskPro-Md/AkzidenzGroteskPro-Md.svg') format('svg');
+  src: local('☺'), url('../fonts/AkzidenzGroteskPro-Md/AkzidenzGroteskPro-Md.woff') format('woff'), url('../fonts/AkzidenzGroteskPro-Md/AkzidenzGroteskPro-Md.ttf') format('truetype'), url('../fonts/AkzidenzGroteskPro-Md/AkzidenzGroteskPro-Md.svg') format('svg');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: 'AkzidenzGroteskPro';
   src: url('../fonts/AkzidenzGroteskPro-Bold/AkzidenzGroteskPro-Bold.eot');
-  src: local('☺'), url('fonts/AkzidenzGroteskPro-Bold.woff') format('woff'), url('../fonts/AkzidenzGroteskPro-Bold/AkzidenzGroteskPro-Bold.ttf') format('truetype'), url('../fonts/AkzidenzGroteskPro-Bold/AkzidenzGroteskPro-Bold.svg') format('svg');
+  src: local('☺'), url('../fonts/AkzidenzGroteskPro-Bold/AkzidenzGroteskPro-Bold.woff') format('woff'), url('../fonts/AkzidenzGroteskPro-Bold/AkzidenzGroteskPro-Bold.ttf') format('truetype'), url('../fonts/AkzidenzGroteskPro-Bold/AkzidenzGroteskPro-Bold.svg') format('svg');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'icomoon';
-  src: url('../fonts/icomoon/icomoon.ttf?hyaowl') format('truetype'), url('../fonts/icomoon/icomoon.woff?hyaowl') format('woff'), url('../fonts/icomoon/icomoon.svg?hyaowl#icomoon') format('svg');
+  src: url('../fonts/icomoon/icomoon.ttf?tsbd2r') format('truetype'), url('../fonts/icomoon/icomoon.woff?tsbd2r') format('woff'), url('../fonts/icomoon/icomoon.svg?tsbd2r#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -100,6 +100,10 @@
 .icon-menu:before {
   content: "\e90f";
 }
+.icon-ae_logo:before {
+  content: "\e910";
+  color: #c2c3c4;
+}
 body,
 table {
   font-family: "AkzidenzGroteskPro";
@@ -135,20 +139,22 @@ html.uk-touch body *.uk-invisible {
   }
 }
 a {
+  color: #000000;
   text-decoration: none;
-  -webkit-transition: all .3s linear;
-  -o-transition: all .3s linear;
-  -moz-transition: all .3s linear;
-  transition: all .3s linear;
+  -webkit-transition: all .15s linear;
+  -o-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear;
 }
 a:hover {
-  text-decoration: underline;
+  color: #ea6f48;
+  text-decoration: none;
 }
 svg {
-  -webkit-transition: fill .3s linear;
-  -o-transition: fill .3s linear;
-  -moz-transition: fill .3s linear;
-  transition: fill .3s linear;
+  -webkit-transition: fill .15s linear;
+  -o-transition: fill .15s linear;
+  -moz-transition: fill .15s linear;
+  transition: fill .15s linear;
 }
 .uk-container {
   margin: 0 auto;
@@ -245,8 +251,276 @@ button.btn:hover {
 }
 /* ELEMENTS STYLE END */
 /* PAGE HEADER */
+.header__top {
+  padding: 50px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+.header__top-contacts a {
+  margin-right: 6%;
+  display: inline-block;
+  vertical-align: top;
+}
+.header__bottom {
+  padding-top: 50px;
+}
+.logo {
+  margin-top: 35px;
+  display: inline-block;
+}
+.logo__text {
+  margin-top: 25px;
+  display: block;
+  max-width: 50px;
+  color: #000000;
+  font-family: 'Comfortaa', cursive;
+  font-size: 13px;
+  -webkit-transition: color .15s linear;
+  -o-transition: color .15s linear;
+  -moz-transition: color .15s linear;
+  transition: color .15s linear;
+}
+.logo:hover {
+  text-decoration: none;
+}
+.logo:hover .logo__text {
+  color: #ea6f48;
+}
+.link-question {
+  color: #e96f47;
+}
+.link-tel {
+  position: relative;
+  padding-left: 15px;
+  font-weight: 700;
+  font-family: "AkzidenzGroteskPro" !important;
+}
+.link-tel:before {
+  position: absolute;
+  top: 4.5px;
+  left: 0;
+  font-family: 'icomoon' !important;
+  font-size: 10px;
+}
+.link-tel:hover {
+  text-decoration: none;
+}
+.link-contacts:hover {
+  text-decoration: none;
+}
+.search {
+  position: relative;
+  padding-left: 25px;
+  line-height: 18px;
+  font-family: "AkzidenzGroteskPro" !important;
+}
+.search:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #000000;
+  font-family: 'icomoon' !important;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  -webkit-transition: color .15s linear;
+  -o-transition: color .15s linear;
+  -moz-transition: color .15s linear;
+  transition: color .15s linear;
+}
+.search:hover {
+  color: #000000;
+  text-decoration: none;
+}
+.search:hover:before {
+  color: #ea6f48;
+}
+.basket {
+  position: relative;
+  margin-left: 22%;
+  padding-left: 40px;
+}
+.basket__counter {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #ea6f48;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+}
+.auth {
+  position: relative;
+  padding-left: 25px;
+  font-family: "AkzidenzGroteskPro" !important;
+}
+.auth:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #000000;
+  font-family: 'icomoon' !important;
+  font-size: 14px;
+  font-weight: 700;
+  -webkit-transition: color .15s linear;
+  -o-transition: color .15s linear;
+  -moz-transition: color .15s linear;
+  transition: color .15s linear;
+}
+.auth:hover {
+  color: #000000;
+}
+.auth:hover:before {
+  color: #ea6f48;
+}
+/* MAIN NAV */
+.uk-navbar {
+  background-color: #ffffff;
+}
+.uk-navbar-nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.uk-navbar-nav > li > a {
+  padding: 0;
+  padding-bottom: 40px;
+  height: auto;
+  color: #000000;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: border-color 0.15s linear;
+  -o-transition: border-color 0.15s linear;
+  -moz-transition: border-color 0.15s linear;
+  transition: border-color 0.15s linear;
+}
+.uk-navbar-nav > li > a.uk-active {
+  font-weight: 700;
+}
+.uk-navbar-nav > li > a:hover {
+  border-color: #ea6f48;
+  background: transparent;
+}
+.uk-dropdown-bottom {
+  margin-top: 0;
+}
+.uk-navbar-nav > li > a[href='#'] {
+  cursor: pointer;
+}
+.uk-navbar-nav > li.uk-open > a,
+.uk-navbar-nav > li:hover > a,
+.uk-navbar-nav > li > a:focus {
+  background-color: transparent;
+}
 /* PAGE CONTENT */
 /* PAGE FOOTER */
+.footer__title {
+  margin-bottom: 45px;
+  padding-bottom: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: .13px;
+  position: relative;
+}
+.footer__title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 58px;
+  height: 2px;
+  background-color: #ea6f48;
+}
+.footer__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer__list-item {
+  margin-bottom: 20px;
+}
+.footer__list-item a {
+  color: #474747;
+  letter-spacing: .11px;
+}
+.footer__list-item a:hover {
+  color: #ea6f48;
+}
+.footer .link-tel,
+.footer .link-contacts {
+  margin-bottom: 20px;
+  display: block;
+}
+.soc-list {
+  margin-top: 52px;
+}
+.soc-list__link {
+  display: inline-block;
+  vertical-align: middle;
+  color: #474747;
+}
+.soc-list__link:before {
+  -webkit-transition: color .15s linear;
+  -o-transition: color .15s linear;
+  -moz-transition: color .15s linear;
+  transition: color .15s linear;
+}
+.soc-list__link:hover:before {
+  color: #ea6f48;
+}
+.soc-list a.icon-vk {
+  margin-right: 30px;
+  font-size: 12px;
+}
+.soc-list a.icon-youtube {
+  font-size: 30px;
+}
+.dev {
+  position: relative;
+  margin-top: 90px;
+  padding-bottom: 50px;
+  display: block;
+  color: #474747;
+  font-family: "AkzidenzGroteskPro" !important;
+  line-height: 22px;
+  letter-spacing: .11px;
+  background-image: url('../img/icon-svg/ae_logo2.svg');
+  background-repeat: no-repeat;
+  background-position: 0 bottom;
+  -webkit-background-size: 25px 25px;
+          background-size: 25px;
+}
+.dev:hover {
+  background-image: url('../img/icon-svg/ae_logo.svg');
+  background-position: 0 bottom;
+}
+.dev:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 20px;
+  color: #ea6f48;
+  font-family: 'icomoon' !important;
+}
 /* SLIDERS */
 /* MODALS WINDOW */
 /* FORMS */
+.search-form {
+  display: none;
+}
