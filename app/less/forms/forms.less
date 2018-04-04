@@ -1,5 +1,38 @@
 /* FORMS */
 
 .search-form {
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 100%;
+	transition: opacity .7s ease;
 	display: none;
+	input[type="text"] {
+		padding: 0 60px 0 0;
+		width: 100%;
+		color: #474747;
+		font-size: 16px;
+		line-height: 21px;
+		letter-spacing: .11px;
+		border: none;
+		outline: none;
+	}
+	
+	button[type="submit"] {
+		position: absolute;
+		top: 2px; 
+		right: 0;
+		padding: 0;
+		background: transparent;
+		border: none;
+		color: #e96f47;
+		font-size: 16px;
+		line-height: 21px;
+		letter-spacing: .11px;
+		cursor: pointer;
+	}
+}
+
+::placeholder {
+	opacity: .5;
 }

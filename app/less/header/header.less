@@ -6,6 +6,7 @@
 		padding: 50px 0;
 		border-bottom: 1px solid #e8e8e8;
 		&-contacts {
+			position: relative;
 			a {
 				margin-right: 6%;
 				display: inline-block;
@@ -143,6 +144,35 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	.uk-dropdown-list {
+		padding: 65px 0;
+		background-color: #f6f6f6;
+	}
+}
+
+.navbar__title{
+	margin-bottom: 45px;
+	padding-bottom: 30px;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: .13px;
+	.bottom-line();
+}
+.sublist {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sublist__item {
+	margin-bottom: 20px;
+	a {
+		font-size: 16px;
+		color: #474747;
+		letter-spacing: .11px;
+		&:hover {
+			color: @orange;
+		}
+	}
 }
 
 .uk-navbar-nav>li>a {
@@ -151,15 +181,17 @@
 	height: auto;
 	color: #000000;
 	font-size: 15px;
+	font-family: @mainFont;
 	line-height: 1;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	border-bottom: 3px solid transparent;
-	transition: border-color .15s linear;
+	transition: color .15s, border-color .15s linear;
 	&.uk-active {
 		font-weight: 700;
 	}
 	&:hover {
+		color: @orange;
 		border-color: @orange;
 		background: transparent;
 	}
@@ -176,3 +208,4 @@
 .uk-navbar-nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus {
 	background-color: transparent;
 }
+

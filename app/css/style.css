@@ -255,6 +255,9 @@ button.btn:hover {
   padding: 50px 0;
   border-bottom: 1px solid #e8e8e8;
 }
+.header__top-contacts {
+  position: relative;
+}
 .header__top-contacts a {
   margin-right: 6%;
   display: inline-block;
@@ -394,25 +397,65 @@ button.btn:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+.uk-navbar-nav .uk-dropdown-list {
+  padding: 65px 0;
+  background-color: #f6f6f6;
+}
+.navbar__title {
+  margin-bottom: 45px;
+  padding-bottom: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: .13px;
+  position: relative;
+}
+.navbar__title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 58px;
+  height: 2px;
+  background-color: #ea6f48;
+}
+.sublist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sublist__item {
+  margin-bottom: 20px;
+}
+.sublist__item a {
+  font-size: 16px;
+  color: #474747;
+  letter-spacing: .11px;
+}
+.sublist__item a:hover {
+  color: #ea6f48;
+}
 .uk-navbar-nav > li > a {
   padding: 0;
   padding-bottom: 40px;
   height: auto;
   color: #000000;
   font-size: 15px;
+  font-family: "AkzidenzGroteskPro";
   line-height: 1;
   letter-spacing: 1px;
   text-transform: uppercase;
   border-bottom: 3px solid transparent;
-  -webkit-transition: border-color 0.15s linear;
-  -o-transition: border-color 0.15s linear;
-  -moz-transition: border-color 0.15s linear;
-  transition: border-color 0.15s linear;
+  -webkit-transition: color 0.15s, border-color 0.15s linear;
+  -o-transition: color 0.15s, border-color 0.15s linear;
+  -moz-transition: color 0.15s, border-color 0.15s linear;
+  transition: color 0.15s, border-color 0.15s linear;
 }
 .uk-navbar-nav > li > a.uk-active {
   font-weight: 700;
 }
 .uk-navbar-nav > li > a:hover {
+  color: #ea6f48;
   border-color: #ea6f48;
   background: transparent;
 }
@@ -500,15 +543,6 @@ button.btn:hover {
   font-family: "AkzidenzGroteskPro" !important;
   line-height: 22px;
   letter-spacing: .11px;
-  background-image: url('../img/icon-svg/ae_logo2.svg');
-  background-repeat: no-repeat;
-  background-position: 0 bottom;
-  -webkit-background-size: 25px 25px;
-          background-size: 25px;
-}
-.dev:hover {
-  background-image: url('../img/icon-svg/ae_logo.svg');
-  background-position: 0 bottom;
 }
 .dev:before {
   position: absolute;
@@ -522,5 +556,54 @@ button.btn:hover {
 /* MODALS WINDOW */
 /* FORMS */
 .search-form {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  -webkit-transition: opacity .7s ease;
+  -o-transition: opacity .7s ease;
+  -moz-transition: opacity .7s ease;
+  transition: opacity .7s ease;
   display: none;
+}
+.search-form input[type="text"] {
+  padding: 0 60px 0 0;
+  width: 100%;
+  color: #474747;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: .11px;
+  border: none;
+  outline: none;
+}
+.search-form button[type="submit"] {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #e96f47;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: .11px;
+  cursor: pointer;
+}
+::-webkit-input-placeholder {
+  opacity: .5;
+}
+:-moz-placeholder {
+  opacity: .5;
+}
+::-moz-placeholder {
+  opacity: .5;
+}
+:-ms-input-placeholder {
+  opacity: .5;
+}
+::-ms-input-placeholder {
+  opacity: .5;
+}
+::placeholder {
+  opacity: .5;
 }
