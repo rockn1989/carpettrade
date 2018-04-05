@@ -4,6 +4,57 @@ var CP = CP || {};
 
 $(function() {
 
+	/* MAIN SLIDER */
+
+$('div.preload').each(function(i, el) {
+	var imgSrc = $(el).find('.slide__inner').css('background-image');
+	if(imgSrc) {
+		var src = imgSrc.replace(/(^url\()|(\)$|[\"\'])/g, ''),
+				img = $('<img>').attr('src', src).on('load', function() {
+					$(el).removeClass('preload');
+				});
+	}
+});
+
+$('.main-slider').slick({
+	arrows: true,
+	dots: true,
+	infinity: true,
+	cssEase: 'linear',
+	autoplay: true,
+	fade: true,
+	autoplaySpeed: 2000,
+	speed: 500,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	prevArrow: '<div class="btn-slide slick-prev"><i class="icon-arrow-left"></i></div>',
+	nextArrow: '<div class="btn-slide slick-next"><i class="icon-arrow-right"></i></div>',
+	responsive: [
+		{
+			breakpoint: 1025,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+			}
+		},
+		{
+			breakpoint: 940,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		},
+		{
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}
+	]
+});
+
 	/* SHOW FORM */
 
 	$('.js__search-form').on('click', function(e) {

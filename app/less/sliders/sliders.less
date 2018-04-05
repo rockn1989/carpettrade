@@ -1,1 +1,137 @@
 /* SLIDERS */
+
+.main-slider {
+	margin: 0 auto;
+	max-width: 1360px;
+	background: #ffffff;
+	&.preload {
+		position: relative;
+		height: 636px;
+		overflow: hidden;
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: #ffffff url('../img/ajax-loader.gif') center no-repeat;
+		}
+		.slick-list,
+		.slick-dots,
+		.btn-slide {
+			opacity: 0;
+		}
+	}
+	.slick-list,
+	.slick-dots,
+	.btn-slide {
+		opacity: 1;
+		transition: opacity .3s ease;
+	}
+	.slide {
+		&__inner {
+			position: relative;
+			margin-left: auto;
+			max-width: 1235px;
+			height: 636px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+		&__desc {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding: 60px 3.5% 30px 0;
+			background-color: #ffffff;
+			width: 35%;
+		}
+		&__title {
+			margin-bottom: 40px;
+			color: #000000;
+			font-size: 40px;
+			line-height: 50px;
+			font-weight: 500;
+		}
+		&__text {
+			margin-bottom: 40px;
+			color: #474747;
+			font-size: 21px;
+			line-height: 26px;
+			letter-spacing: .15px;
+		}
+		&__link {
+			color: @orange;
+		}
+	}
+
+	.slick-prev:before,
+	.slick-next:before {
+		content: '';
+		font-family: none;
+		font-size: 0;
+	}
+	.slick-prev,
+	.slick-next {
+		width: auto;
+		height: auto;
+		font-size: 20px;
+		z-index: 120;
+		bottom: 23px;
+		i {
+			&:before {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.slick-prev {
+		top: auto;
+		left: auto;
+		right: 8%;
+	}
+
+	.slick-next {
+		top: auto;
+		right: 3.5%;
+	}
+	
+	.slick-dots {
+		bottom: 31.7%;
+		left: 0;
+		display: inline-block;
+		width: auto;
+		li {
+			margin-bottom: 25px;
+			display: block;
+			height: 2px;
+			&.slick-active {
+				button {
+					&:before {
+						width: 58px;
+						background-color: @orange;
+					}
+				}
+			}
+		}
+		button {
+			width: auto;
+			height: auto;
+			padding: 0;
+			&:before {
+				content: '';
+				display: block;
+				width: 20px;
+				height: 2px;
+				font-family: none;
+				opacity: 1;
+				background-color: #000000;
+				transition: width .3s, background-color .3s ease;
+			}
+		}
+	}
+
+}
+
+
