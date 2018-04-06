@@ -5,23 +5,7 @@
 	max-width: 1360px;
 	background: #ffffff;
 	&.preload {
-		position: relative;
 		height: 636px;
-		overflow: hidden;
-		&:after {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			background: #ffffff url('../img/ajax-loader.gif') center no-repeat;
-		}
-		.slick-list,
-		.slick-dots,
-		.btn-slide {
-			opacity: 0;
-		}
 	}
 	.slick-list,
 	.slick-dots,
@@ -82,6 +66,12 @@
 		i {
 			&:before {
 				font-size: 14px;
+				transition: color .15s linear;
+			}
+			&:hover {
+				&:before {
+					color: @orange;
+				}
 			}
 		}
 	}
@@ -134,4 +124,77 @@
 
 }
 
+.slick-dotted.slick-slider {
+	margin-bottom: 0;
+}
 
+
+.products-slider {
+	margin-bottom: 90px;
+	&__title {
+		margin-bottom: 50px;
+		font-size: 36px;
+		line-height: 50px;
+		font-weight: 500;
+	}
+}
+
+.sliders-list {
+	.slide {
+		margin-right: 30px;
+	}
+	.slick-prev:before,
+	.slick-next:before {
+		content: '';
+		font-family: none;
+		font-size: 0;
+	}
+	.slick-prev,
+	.slick-next {
+		width: auto;
+		height: auto;
+		font-size: 20px;
+		z-index: 150;
+		bottom: auto;
+		i {
+			&:before {
+				color: #474747;
+				font-size: 14px;
+				transition: color .15s linear;
+			}
+			&:hover {
+				&:before {
+					color: @orange;
+				}
+			}
+		}
+	}
+	.slick-prev {
+		top: -75px;
+		left: auto;
+		right: 4.5%;
+	}
+
+	.slick-next {
+		top: -75px;
+		right: 0;
+	}
+}
+
+
+.preload {
+	position: relative;
+	overflow: hidden;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: #ffffff url('../img/ajax-loader.gif') center no-repeat;
+	}
+	* {
+		opacity: 0;
+	}
+}
