@@ -1,10 +1,7 @@
-'use strict';
-
-var CP = CP || {};
 
 $(function() {
 
-	/* MAIN SLIDER */
+	// MAIN SLIDER
 
 	$('div.preload').each(function(i, el) {
 		var imgSrc = $(el).find('.slide__inner').css('background-image');
@@ -55,7 +52,7 @@ $(function() {
 		]
 	});
 
-	/* PRODUCT SLIDER */
+	// PRODUCT SLIDER
 
 	$('.products-slider .sliders-list').slick({
 		arrows: true,
@@ -94,7 +91,7 @@ $(function() {
 		]
 	});
 
-	/* MAP SLIDER */
+	// MAP SLIDER
 
 	$('.map-slider').slick({
 		arrows: true,
@@ -133,16 +130,15 @@ $(function() {
 				}
 			}
 		]
-	});
-
-/*	.on('afterChange', function(event, slick, currentSlide, nextSlide) {
-		var coords = $(slick.$slides[currentSlide]).find('.slide__map').data('coords'),
+	}).on('afterChange', function(event, slick, currentSlide, nextSlide) {
+		var coords = $(slick.$slides[currentSlide]).data('coords'),
 				lat = parseFloat(coords.lat),
 				lng = parseFloat(coords.lng);
+				console.log(lat, lng)
 		initMap(lat, lng);
-	});*/
+	});
 
-	/* SHOW FORM */
+	// SHOW FORM
 
 	$('.js__search-form').on('click', function(e) {
 		e.preventDefault();
@@ -168,7 +164,7 @@ $(function() {
 		};
 	};
 
-	/* DISABLED UIKIT ANIMATION FOR MOBILE */
+	// DISABLED UIKIT ANIMATION FOR MOBILE
 
 	UIkit.on('beforeready.uk.dom', function () {
 		if (UIkit.$win.width() < 767 && $('html').hasClass('uk-touch')) {
@@ -177,3 +173,4 @@ $(function() {
 	});
 
 });
+

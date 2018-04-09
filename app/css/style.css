@@ -1029,8 +1029,8 @@ button.btn:hover {
 .map__wrapper .slick-list {
   z-index: 501;
 }
-.map-slider:hover .slick-list {
-  z-index: 1 !important;
+.map__wrapper:hover .slick-list {
+  z-index: 499;
 }
 .map-slider .slide__inner {
   position: relative;
@@ -1089,6 +1089,7 @@ button.btn:hover {
   left: 0;
   display: inline-block;
   width: auto;
+  z-index: 900;
 }
 .map-slider .slick-dots li {
   margin-bottom: 25px;

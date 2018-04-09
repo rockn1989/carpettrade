@@ -86,7 +86,7 @@
 		top: auto;
 		right: 3.5%;
 	}
-	
+
 	.slick-dots {
 		bottom: 31.7%;
 		left: 0;
@@ -197,12 +197,17 @@
 	.slick-list {
 		z-index: 501;
 	}
+	&:hover {
+		.slick-list {
+			z-index: 499;
+		}
+	}
 }
 
 .map-slider	{
 	&:hover {
 		.slick-list {
-			z-index: 1 !important;
+			//z-index: 1 !important;
 		}
 	}
 	.slide {
@@ -264,6 +269,7 @@
 		left: 0;
 		display: inline-block;
 		width: auto;
+		z-index: 900;
 		li {
 			margin-bottom: 25px;
 			display: block;

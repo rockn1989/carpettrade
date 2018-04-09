@@ -1,10 +1,5 @@
-var CT = CT || {};
+/*var CT = CT || {};
 
-/*CT.map = (function ($, CT) {
-	var val = 1;
-})(jQuery, CT);*/
-
-/*
 CT.map = function () {
 	 function initMap() {
 			var coords = {lat: -25.363, lng: 131.044};
@@ -17,16 +12,12 @@ CT.map = function () {
 				map: map
 			});
 	};
+	return initMap;
 };
 
-CT.map.prototype.init = function() {
-	initMap();
-};
+CT.map();
 
-
-CT.map.init();*/
-		
-/*(function($, CT) {
+(function($, CT) {
 
 'use strict';
 
@@ -84,10 +75,6 @@ CT.map = function() {
 
 }
 
-CT.map.prototype.updateCoords = function () {
-	console.log(123);
-};
-
 })(jQuery, CT);
 */
 
@@ -103,13 +90,20 @@ CT.map.prototype.updateCoords = function () {
     map.setCenter(newLatLng);
 }*/
 
+	var Map = (function ($) {
+		var _self = this,
+			coord = $('.map-slider .slide').data('coords'),
+				lat = parseFloat(coord.lat),
+				lng = parseFloat(coord.lng);
+		return coord
+	})(jQuery);
 
-	var coord = $('.slide__map').data('coords');
+	var coord = $('.map-slider .slide').data('coords');
 
 	var lat = parseFloat(coord.lat),
 			lng = parseFloat(coord.lng);
 
-	 function initMap() {
+	 function initMap(lat, lng) {
 			var coords = {lat: lat, lng:lng};
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 12,
@@ -155,4 +149,4 @@ CT.map.prototype.updateCoords = function () {
 			});
 	};
 
-	initMap();
+	initMap(lat, lng);
