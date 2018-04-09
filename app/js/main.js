@@ -92,7 +92,55 @@ $(function() {
 				}
 			}
 		]
-	})
+	});
+
+	/* MAP SLIDER */
+
+	$('.map-slider').slick({
+		arrows: true,
+		dots: true,
+		infinity: true,
+		cssEase: 'linear',
+		autoplay: false,
+		fade: true,
+		autoplaySpeed: 2000,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		prevArrow: '<div class="btn-slide slick-prev"><i class="icon-arrow-left"></i></div>',
+		nextArrow: '<div class="btn-slide slick-next"><i class="icon-arrow-right"></i></div>',
+		responsive: [
+			{
+				breakpoint: 1025,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					infinite: true,
+				}
+			},
+			{
+				breakpoint: 940,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}
+		]
+	});
+
+/*	.on('afterChange', function(event, slick, currentSlide, nextSlide) {
+		var coords = $(slick.$slides[currentSlide]).find('.slide__map').data('coords'),
+				lat = parseFloat(coords.lat),
+				lng = parseFloat(coords.lng);
+		initMap(lat, lng);
+	});*/
 
 	/* SHOW FORM */
 
