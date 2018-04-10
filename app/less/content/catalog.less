@@ -1,9 +1,14 @@
 /* CATALOG */
 
 .catalog {
+	&__list-wrapper {
+		margin-bottom: 40px;
+		padding-bottom: 90px;
+		border-bottom: 1px solid #e8e8e8;
+	}
 	&__list {
 		margin-bottom: 30px;
-		
+
 		font-size: 0;
 		.card {
 			margin-right: 2.6%;
@@ -14,10 +19,12 @@
 			&:nth-child(3n) {
 				margin-right: 0;
 			}
+			&:nth-last-child(n-3) {
+				margin-bottom: 0;
+			}
 		}
 		&:last-child {
-			padding-bottom: 40px;
-			border-bottom: 1px solid #e8e8e8;
+			margin-bottom: 0;
 		}
 	}
 	&__sort {
