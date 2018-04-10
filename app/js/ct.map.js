@@ -90,63 +90,67 @@ CT.map = function() {
     map.setCenter(newLatLng);
 }*/
 
-	var Map = (function ($) {
+/*	var Map = (function ($) {
 		var _self = this,
 			coord = $('.map-slider .slide').data('coords'),
 				lat = parseFloat(coord.lat),
 				lng = parseFloat(coord.lng);
 		return coord
-	})(jQuery);
+	})(jQuery);*/
 
-	var coord = $('.map-slider .slide').data('coords');
+	if($('div').is('.map-slider')) {
+		var coord = $('.map-slider .slide').data('coords');
 
-	var lat = parseFloat(coord.lat),
-			lng = parseFloat(coord.lng);
+		var lat = parseFloat(coord.lat),
+				lng = parseFloat(coord.lng);
 
-	 function initMap(lat, lng) {
-			var coords = {lat: lat, lng:lng};
-			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 12,
-				center: coords,
-				styles: [
-					{
-						"stylers": [
-							{
-								"saturation": -100
-							}
-						]
-					},
-					{
-						"featureType": "administrative",
-						"stylers": [
-							{
-								"saturation": -100
-							}
-						]
-					},
-					{
-						"featureType": "administrative.country",
-						"stylers": [
-							{
-								"saturation": -100
-							}
-						]
-					},
-					{
-						"featureType": "water",
-						"elementType": "geometry.fill",
-						"stylers": [
-							{
-								"color": "#bad9e8"
-							}
-						]
-					}
-				 ]
-			});
-			var marker = new google.maps.Marker({
-				position: coords,
-				map: map
-			});
-	};
+		 function initMap(lat, lng) {
+				var coords = {lat: lat, lng:lng};
+				var map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 12,
+					center: coords,
+					styles: [
+						{
+							"stylers": [
+								{
+									"saturation": -100
+								}
+							]
+						},
+						{
+							"featureType": "administrative",
+							"stylers": [
+								{
+									"saturation": -100
+								}
+							]
+						},
+						{
+							"featureType": "administrative.country",
+							"stylers": [
+								{
+									"saturation": -100
+								}
+							]
+						},
+						{
+							"featureType": "water",
+							"elementType": "geometry.fill",
+							"stylers": [
+								{
+									"color": "#bad9e8"
+								}
+							]
+						}
+					 ]
+				});
+				var marker = new google.maps.Marker({
+					position: coords,
+					map: map
+				});
+		};
 
-	initMap(lat, lng);
+		initMap(lat, lng);
+	}
+
+

@@ -3,5 +3,123 @@
 {% set bread = ["Главная", "Ковры", "Классический дизайн"] %}
 {% set main = false %}
 {% block content %}
+<div class="content">
+	<div class="uk-container">
+		<h1 class="title-h1">Классический дизайн</h1>
+		<div class="catalog">
+			<div class="uk-grid">
+				<div class="uk-width-medium-1-4">
+					<div class="catalog-filter">
+						<img src="img/filter.png" alt="">
+					</div>
+				</div>
+				<div class="uk-width-medium-3-4">
+					<div class="catalog-content">
+						<div class="catalog__sort">
+							<div class="sort__status">
+								<select class="select2" data-theme="sort__status">
+									<option value="">По пулярности, возрастание</option>
+									<option value="">По цене, убывание</option>
+									<option value="">По цене, возрастание</option>
+								</select>
+							</div>
+							<div class="sort__count">
+								<div class="sort__count-text">
+									Показывать товаров
+								</div>
+								<select class="select2" data-theme="sort__count">
+									<option value="">12</option>
+									<option value="" selected>24</option>
+									<option value="">36</option>
+								</select>
+							</div>
+						</div>
+						<div class="catalog__list">
+							<div class="card">
+								<a href="">
+									<div class="card__img">
+										<img src="/img/slides-images/card-img-1-205x309.png" alt="">
+									</div>
+									<div class="card__name">Вернисаж</div>
+									<div class="card__price">от 3290 руб.</div>
+								</a>
+								<div class="card__status">
+									<div class="new">Новинка</div>
+								</div>
+							</div>
+							<div class="card">
+								<a href="">
+									<div class="card__img">
+										<img src="/img/slides-images/card-img-1-205x309.png" alt="">
+									</div>
+									<div class="card__name">Вернисаж</div>
+									<div class="card__price">от 3290 руб.</div>
+								</a>
+								<div class="card__status">
+									<div class="discount">Скидка</div>
+								</div>
+							</div>
+							<div class="card">
+								<a href="">
+									<div class="card__img">
+										<img src="/img/slides-images/card-img-1-205x309.png" alt="">
+									</div>
+									<div class="card__name">Вернисаж</div>
+									<div class="card__price">от 3290 руб.</div>
+								</a>
+							</div>
+						</div>
 
+						<div class="aside-block aside-block--promo-text">
+							<div class="uk-container">
+								<div class="aside-block__inner" style="background-image: url('img/promo-banner.png')">
+									<div class="aside-block__title">Дарим скидки 20%</div>
+									<div class="aside-block__text">
+										В сети ковровых магазинов Карпет Трейд действуют скидки до 20% на отдельные коллекции ковров.
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="catalog__list">
+							<div class="card">
+								<a href="">
+									<div class="card__img">
+										<img src="/img/slides-images/card-img-1-205x309.png" alt="">
+									</div>
+									<div class="card__name">Вернисаж</div>
+									<div class="card__price">от 3290 руб.</div>
+								</a>
+								<div class="card__status">
+									<div class="new">Новинка</div>
+								</div>
+							</div>
+							<div class="card">
+								<a href="">
+									<div class="card__img">
+										<img src="/img/slides-images/card-img-1-205x309.png" alt="">
+									</div>
+									<div class="card__name">Вернисаж</div>
+									<div class="card__price">от 3290 руб.</div>
+								</a>
+								<div class="card__status">
+									<div class="discount">Скидка</div>
+								</div>
+							</div>
+							<div class="card">
+								<a href="">
+									<div class="card__img">
+										<img src="/img/slides-images/card-img-1-205x309.png" alt="">
+									</div>
+									<div class="card__name">Вернисаж</div>
+									<div class="card__price">от 3290 руб.</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}

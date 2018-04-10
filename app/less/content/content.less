@@ -92,6 +92,7 @@
 /* CARD */
 
 .card {
+	position: relative;
 	a {
 		&:hover {
 			.card__name {
@@ -117,6 +118,20 @@
 		font-size: 18px;
 		font-weight: 500;
 		letter-spacing: .13px;
+	}
+	&__status {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		font-size: 14px;
+		z-index: 50;
+		&>div {
+			padding: 2px 5px;
+			color: #ffffff;
+			text-transform: uppercase;
+			letter-spacing: .8px;
+			background-color: @orange;
+		}
 	}
 }
 
@@ -233,21 +248,21 @@
 
 
 .aside-block {
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 	&__inner {
-		padding: 15px;
+		padding: 70px 15px;
 		outline-width: 1px;
 		outline-color: rgba(255, 255 ,255, .5);
 		outline-offset: -15px;
 		outline-style: solid;
 		position: relative;
-		height: 190px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: wrap;
 	}
 	&__title {
 		position: relative;
@@ -268,7 +283,27 @@
 			background-color: @orange;
 		}
 	}
+	&__text {
+		margin-top: 20px;
+    margin-left: 7.5%;
+    padding: 0 15% 0 20%;
+		width: 100%;
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 28px;
+    letter-spacing: .15px;
+	}
 	&__btn {
 		margin-right: 7.5%;
+	}
+	&--promo-text {
+		.uk-container {
+			padding: 0;
+		}
+		.aside-block__inner {
+			align-items: canter;
+			padding: 50px 15px;
+			height: 220px;
+		}
 	}
 }
