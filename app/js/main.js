@@ -1,4 +1,6 @@
 
+var CT = CT || {};
+
 $(function() {
 
 	// MAIN SLIDER
@@ -134,8 +136,7 @@ $(function() {
 		var coords = $(slick.$slides[currentSlide]).data('coords'),
 				lat = parseFloat(coords.lat),
 				lng = parseFloat(coords.lng);
-				console.log(lat, lng)
-		initMap(lat, lng);
+		map.changeCoords(lat, lng);
 	});
 
 	// SHOW FORM
@@ -171,6 +172,12 @@ $(function() {
 			UIkit.$('[data-uk-scrollspy]').removeAttr('data-uk-scrollspy');
 		}
 	});
+
+
+	if($('div').is('.slide__map')) {
+		var map = CT.map();
+		map.init();
+	};
 
 });
 
