@@ -204,7 +204,14 @@ h5,
 .title-h5 {
   margin-bottom: 30px;
   font-size: 16px;
-  line-height: 22x;
+  line-height: 22px;
+}
+p {
+  color: #474747;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: .13px;
 }
 a.btn,
 button.btn {
@@ -945,7 +952,7 @@ button.btn:hover {
 .catalog__list .card:nth-child(3n) {
   margin-right: 0;
 }
-.catalog__list .card:nth-last-child(n-3) {
+.catalog__list .card:nth-last-child(-n+3) {
   margin-bottom: 0;
 }
 .catalog__list:last-child {
@@ -971,6 +978,9 @@ button.btn:hover {
   line-height: 52px;
   float: left;
   letter-spacing: .11px;
+}
+.seo-block {
+  margin-top: 80px;
 }
 /* CATALOG END */
 /* PAGE FOOTER */
