@@ -50,7 +50,7 @@ button.btn {
 	display: inline-block;
 	vertical-align: top;
 	min-width: 200px;
-	height: 55px;
+	height: 54px;
 	line-height: 51px;
 	color: #ffffff;
 	font-size: 15px;
@@ -145,36 +145,30 @@ button.btn {
 		outline: none;
 		&__arrow {
 			b {
-		    border-color: #474747 transparent transparent transparent;
-		    border-style: solid;
-		    border-width: 5px 4px 0 4px;
-		    height: 0;
-		    left: auto;
-		    right: 20px;
-		    margin-left: -4px;
-		    margin-top: -2px;
-		    position: absolute;
-		    top: 50%;
-		    width: 0;
+				border-color: #474747 transparent transparent transparent;
+				border-style: solid;
+				border-width: 5px 4px 0 4px;
+				height: 0;
+				left: auto;
+				right: 20px;
+				margin-left: -4px;
+				margin-top: -2px;
+				position: absolute;
+				top: 50%;
+				width: 0;
 			}
 		}
 	}
 	&--open {
 		.select2-selection__arrow {
 			b {
-		    border-color: transparent transparent #474747 transparent;
-		    border-width: 0 4px 5px 4px;
+				border-color: transparent transparent #474747 transparent;
+				border-width: 0 4px 5px 4px;
 			}
 		}
 	}
 	.select2-selection__rendered {
 		padding: 0 20px !important;
-	}
-	&--sort__status {
-		width: 390px !important;
-	}
-	&--sort__count {
-		width: 115px !important;
 	}
 	&--default {
 		.select2-selection--single {
@@ -195,6 +189,15 @@ button.btn {
 			color: #000000;
 		}
 	}
+	&--sort__status {
+		width: 390px !important;
+	}
+	&--sort__count {
+		width: 115px !important;
+	}
+	&--detail-select {
+		width: 100% !important;
+	}
 	.select2-results__option {
 		transition: background-color .3s linear;
 		&:hover {
@@ -208,3 +211,101 @@ button.btn {
 }
 
 /* ELEMENTS STYLE END */
+
+
+/* TABS */
+
+ul.uk-switcher {
+	padding: 50px 0;
+	.tab-text {
+		margin-bottom: 30px;
+		color: #474747;
+		font-size: 21px;
+		line-height: 26px;
+		letter-spacing: .15px;
+	}
+}
+.uk-tab {
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.uk-tab>li {
+	margin-right: 25px;
+}
+
+.uk-tab>li>a {
+	padding-left: 0;
+	padding-right: 0;
+	padding: 0 0 25px 0;
+	color: #000000;
+	font-size: 24px;
+	font-weight: 500;
+	border: none;
+	border-bottom: 3px solid transparent;
+	&:hover {
+		margin-bottom: 0 !important;
+		padding-bottom: 25px !important;
+		color: @orange;
+		background-color: transparent;
+	}
+}
+
+.uk-tab>li.uk-active>a {
+	border-bottom: 3px solid @orange;
+}
+
+.tab-table-wrapper {
+	margin-bottom: 40px;
+	height: 260px;
+	overflow: hidden;
+	transition: height .3s ease;
+	&.open {
+		height: 100%;
+	}
+}
+
+.tab-table__links {
+	position: relative;
+	padding-right: 35px;
+	display: inline-block;
+	font-size: 21px;
+	letter-spacing: .15px;
+	&:after {
+		content: '';
+		border-color: #474747 transparent transparent transparent;
+		border-style: solid;
+		border-width: 5px 4px 0 4px;
+		height: 0;
+		left: auto;
+		right: 0;
+		margin-left: -4px;
+		margin-top: -2px;
+		position: absolute;
+		top: 50%;
+		width: 0;
+		transition: border-color .3s linear;
+	}
+	&.open {
+		&:after {
+			border-color: transparent transparent #474747 transparent;
+			border-width: 0 4px 5px 4px;
+		}
+	}
+}
+
+table.product-options {
+	width: 100%;
+	max-width: 775px;
+	border-collapse: collapse;
+	tr:nth-child(odd) {
+		background-color: #f6f6f6;
+	}
+	td {
+		padding-left: 35px;
+		font-size: 21px;
+		height: 64px;
+		letter-spacing: .15px;
+	}
+}
+
+/* END TABS */
