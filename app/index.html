@@ -29,7 +29,7 @@
 	<div class="uk-container">
 		<div class="uk-grid">
 			<div class="uk-width-2-10">
-				<a href="" class="logo">
+				<a href="/" class="logo">
 					<img src="img/logo.png" alt="">
 					<span class="logo__text">
 						сеть ковровых магазинов
@@ -44,7 +44,7 @@
 								<div class="header__top-contacts-links">
 									<a href="#question-modal" class="link-question" data-uk-modal>Задать вопрос</a>
 									<a href="tel:+79161401818" class="link-tel icon-phone">+7 916 140 18 18</a>
-									<a href="#contacs-modal" class="link-contacts" data-uk-modal>Напишите нам</a>
+									<a href="mailto:info@carpettrade.ru" class="link-tel icon-mail">info@carpettrade.ru</a>
 									<a href="" class="search uk-float-right icon-search js__search-form">Поиск</a>
 								</div>
 								<form action="" class="search-form">
@@ -575,7 +575,8 @@
 			<div class="uk-width-medium-2-10">
 				<div class="footer__title">Контакты</div>
 				<a href="tel:+79161401818" class="link-tel icon-phone">+7 916 140 18 18</a>
-				<a href="#contacs-modal" class="link-contacts" data-uk-modal>Напишите нам</a>
+				<a href="mailto:info@carpettrade.ru" class="link-tel icon-mail">info@carpettrade.ru</a>
+				<a href="#question-modal" class="link-contacts" data-uk-modal>Задать вопрос</a>
 				<div class="soc-list">
 					<a href="" class="soc-list__link icon-vk"></a>
 					<a href="" class="soc-list__link icon-youtube"></a>
@@ -586,7 +587,38 @@
 </footer>
 
 
+<div id="question-modal" class="uk-modal default-modal">
+	<div class="uk-modal-dialog">
+		<div class="uk-modal-header">
+			<div class="title">Задать вопрос</div>
+			<a class="uk-modal-close uk-close"></a>
+		</div>
+		<div class="uk-modal-body">
+			<form action="" class="default-form">
+				<fieldset>
+					<input type="text" id="question-name" placeholder="Ваше имя">
+				</fieldset>
+				<fieldset>
+					<input type="email" id="question-email" name="email" placeholder="Электронная почта *" required>
+				</fieldset>
+				<fieldset>
+					<input type="text" id="question-email" name="city" placeholder="Ваш город">
+				</fieldset>
+				<fieldset>
+					<textarea name="message" id="question-message" placeholder="Комментарий"></textarea>
+					<div class="required-fileds">
+						<sup>*</sup> — поля обязательные для заполнения
+					</div>
+				</fieldset>
 
+				<button type="submit" class="btn modal-btn">Отправить</button>
+				<div class="form-politics">
+					Нажимая на кнопку отправить, я даю согласие на обработку <a href="">Персональных данных</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" defer></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwDIUu_o0Q-dltO2DV6UH7S7626ci_Kpg" defer></script>

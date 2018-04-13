@@ -1,0 +1,65 @@
+{% extends "layouts/default.html" %}
+{% set title="Новости" %}
+{% set bread = ["Главная", "Новости"] %}
+{% set main = false %}
+{% block content %}
+<div class="content">
+	<div class="uk-container uk-container--medium">
+		<h1 class="title-h1">Новости</h1>
+		<div class="news-list">
+			<div class="news">
+				<div class="news__podcast">
+					<div class="news__date">
+						14 апреля 2017
+					</div>
+				</div>
+				<div class="news__desc">
+					<div class="news__title">
+						<a href="">ТОП-10 идей: что можно сделать из старого ковра?</a>
+					</div>
+					<div class="news__text">
+						Не стоит спешить избавляться от старого ковра, ведь ему можно подарить новую жизнь. Вариантов использования отслужившего покрытия множество, потребуется лишь минимум усилий, несколько минут свободного времени и капелька фантазии.
+					</div>
+				</div>
+			</div>
+			<div class="news">
+				<div class="news__podcast">
+					<div class="news__date">
+						14 апреля 2017
+					</div>
+				</div>
+				<div class="news__desc">
+					<div class="news__title">
+						<a href="">ТОП-10 идей: что можно сделать из старого ковра?</a>
+					</div>
+					<div class="news__text">
+						Не стоит спешить избавляться от старого ковра, ведь ему можно подарить новую жизнь. Вариантов использования отслужившего покрытия множество, потребуется лишь минимум усилий, несколько минут свободного времени и капелька фантазии.
+					</div>
+				</div>
+			</div>
+			<div class="news">
+				<div class="news__podcast">
+					<div class="news__date">
+						01 января 2017
+					</div>
+				</div>
+				<div class="news__desc">
+					<div class="news__title">
+						<a href="">Ковер в миниатюре: где пригодятся коврики небольших размеров?</a>
+					</div>
+					<div class="news__text">
+						Маленькие коврики – находка для рачительного хозяина. Компактное шерстяное изделие ни в чем не уступает своим большим собратьям, а в некоторых аспектах даже превосходит их. 
+					</div>
+				</div>
+			</div>
+		</div>
+		<ul class="uk-pagination">
+			<li class="uk-active"><span>1</span></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li><span>...</span></li>
+			<li><a href="">12</a></li>
+		</ul>
+	</div>
+</div>
+{% endblock %}

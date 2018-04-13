@@ -1,3 +1,34 @@
 {% block content %}
+<div id="question-modal" class="uk-modal default-modal">
+	<div class="uk-modal-dialog">
+		<div class="uk-modal-header">
+			<div class="title">Задать вопрос</div>
+			<a class="uk-modal-close uk-close"></a>
+		</div>
+		<div class="uk-modal-body">
+			<form action="" class="default-form">
+				<fieldset>
+					<input type="text" id="question-name" placeholder="Ваше имя">
+				</fieldset>
+				<fieldset>
+					<input type="email" id="question-email" name="email" placeholder="Электронная почта *" required>
+				</fieldset>
+				<fieldset>
+					<input type="text" id="question-email" name="city" placeholder="Ваш город">
+				</fieldset>
+				<fieldset>
+					<textarea name="message" id="question-message" placeholder="Комментарий"></textarea>
+					<div class="required-fileds">
+						<sup>*</sup> — поля обязательные для заполнения
+					</div>
+				</fieldset>
 
+				<button type="submit" class="btn modal-btn">Отправить</button>
+				<div class="form-politics">
+					Нажимая на кнопку отправить, я даю согласие на обработку <a href="">Персональных данных</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 {% endblock %}

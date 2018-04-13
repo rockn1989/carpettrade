@@ -1,0 +1,55 @@
+/* SHOPS */
+
+.shop-contacts {
+	margin-bottom: 60px;
+	display: flex;
+	justify-content: space-between;
+	&>div {
+		position: relative;
+		padding-left: 70px;
+		width: 33%;
+		&:last-child {
+			margin-right: 0;
+		}
+		&:after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: @orange;
+			.icomoon();
+		}
+	}
+	&__address {
+		color: #474747;
+		font-size: 21px;
+		line-height: 26px;
+		letter-spacing: .15px;
+		&:after {
+			content: '\e907';
+			font-size: 30px;
+		}
+	}
+	&__tel {
+		color: #474747;
+		font-size: 21px;
+		line-height: 26px;
+		letter-spacing: .15px;
+		&:after {
+			content: '\e906';
+			font-size: 30px;
+		}
+	}
+	&__email {
+		color: #474747;
+		font-size: 16px;
+		letter-spacing: 0.11px;
+	}
+	&__soc {
+		&:after {
+			content: '\e90d';
+			font-size: 12px;
+		}
+	}
+}
+
+/* SHOPS END */

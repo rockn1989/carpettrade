@@ -23,6 +23,7 @@ $(function() {
 			$('.search-form').fadeIn('350', function() {
 				$('.search-form').addClass('show').find('input').focus();
 			});
+			console.log(123)
 			$(document).on('click keyup', hiddenSearchForm);
 		});
 	});
@@ -31,7 +32,9 @@ $(function() {
 		var form = document.querySelector('.search-form'),
 			input = document.querySelector('.search-form input'),
 				btn = document.querySelector('js__search-form');
-		if(((e.which == 27) && (e.target != input || e.target != btn)) && $(form).hasClass('show')) {
+
+		if((e.which == 27) || (e.target != input && e.target != btn) && $(form).hasClass('show')) {
+			console.log(e.target)
 			$(form).fadeOut('350', function() {
 				$(input).val('');
 				$(this).removeClass('show');
@@ -40,6 +43,31 @@ $(function() {
 			});
 		};
 	};
+
+
+/* MASK FORM */
+$('.js__input-phone').mask('+7 999 999-99-99', {clearIfNotMatch: true}).focus(function (e) {
+  if (!$(this).val()) {
+    $(this).val('+7 ');
+  }
+});
+
+//FORM VALIDATE
+  if($('form').is('.default-form')) {
+
+    $('.default-form').validate({
+      rules: {
+        email: {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        email: "Обязательноe поле",
+      },
+    });
+  };
+
 
 	// DISABLED UIKIT ANIMATION FOR MOBILE
 
