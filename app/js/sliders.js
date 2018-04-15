@@ -1,11 +1,6 @@
 
 $(function () {
 
-	if($('div').is('.slide__map')) {
-		var map = CT.map();
-		map.init();
-	};
-
 	$('.main-slider').slick({
 		arrows: true,
 		dots: true,
@@ -86,6 +81,14 @@ $(function () {
 
 	// MAP SLIDER
 
+	var map;
+
+	if($('.slide__map').length !== 0) {
+		var $map = $('#map');
+
+		map = CT.createMap($map[0], $('.map-slider .slide').eq(0).data('coords'));
+	};
+
 	$('.map-slider').slick({
 		arrows: true,
 		dots: true,
@@ -124,10 +127,9 @@ $(function () {
 			}
 		]
 	}).on('afterChange', function(event, slick, currentSlide, nextSlide) {
-		var coords = $(slick.$slides[currentSlide]).data('coords'),
-				lat = parseFloat(coords.lat),
-				lng = parseFloat(coords.lng);
-		map.changeCoords(lat, lng);
+		var coords = $(slick.$slides[currentSlide]).data('coords');
+
+		map.setCoords(coords);
 	});
 
 
