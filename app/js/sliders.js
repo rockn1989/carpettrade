@@ -51,6 +51,7 @@ $(function () {
 		speed: 1500,
 		centerMode: true,
 		centerPadding: '130px',
+		lazyLoad: 'progressive',
 		prevArrow: '<div class="btn-slide slick-prev"><i class="icon-arrow-left"></i></div>',
 		nextArrow: '<div class="btn-slide slick-next"><i class="icon-arrow-right"></i></div>',
 		responsive: [
@@ -184,7 +185,7 @@ $(function () {
 	});
 
 	// SHOPS DETAIL SLIDER
-	
+
 	if($('.shop-map').length !== 0) {
 		var $map = $('.shop-map');
 		map = CT.createMap($map[0], $map.data('coords'));

@@ -5,8 +5,8 @@ $(function() {
 
 	// MAIN SLIDER
 
-	$('div.preload').each(function(i, el) {
-		var imgSrc = $(el).find('.slide__inner').css('background-image') || 
+/*	$('div.preload').each(function(i, el) {
+		var imgSrc = $(el).find('.slide__inner').css('background-image') ||
 								 $(el).find('.slide').css('background-image');
 		if(imgSrc) {
 			var src = imgSrc.replace(/(^url\()|(\)$|[\"\'])/g, ''),
@@ -15,6 +15,18 @@ $(function() {
 					});
 		}
 	});
+*/
+
+	$('div.preload').each(function(i, el) {
+		var imgSrc = $(el).find('[data-preload]').css('background-image');
+		if(imgSrc) {
+			var src = imgSrc.replace(/(^url\()|(\)$|[\"\'])/g, ''),
+					img = $('<img>').attr('src', src).on('load', function() {
+						$(el).removeClass('preload');
+					});
+		}
+	});
+
 
 	// SHOW FORM
 
