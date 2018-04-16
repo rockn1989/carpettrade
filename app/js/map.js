@@ -16,10 +16,11 @@ var CT = CT || {};
 	 * @param {HTMLElement} el Элемент, где отрисовать карту
 	 * @param {MapCoords} coords Координаты центра и маркера
 	 */
-	function Map (el, coords) {
+	function Map (el, coords, offsetPosition) {
+		this.offsetPosition = offsetPosition || 0;
 		this.map = new google.maps.Map(el, {
 			zoom: 12,
-			center: coords,
+			center: this.setCenter(coords, this.offsetPosition),
 			styles: [
 				{
 					"stylers": [
@@ -59,20 +60,35 @@ var CT = CT || {};
 	};
 
 	Map.prototype.createMarker = function (coords) {
+		var image = 'img/icon-png/marker.png';
 		this.marker = new google.maps.Marker({
 			position: coords,
-			map: this.map
+			map: this.map,
+			icon: image
 		});
 	};
 
 	Map.prototype.setCoords = function (coords) {
-		var newLatLng = new google.maps.LatLng(coords.lat, coords.lng);
+		var offsetPosition = this.offsetPosition || 0,
+			offsetX = this.offsetPosition.offsetX || 0,
+			offsetY = this.offsetPosition.offsetY || 0;
 
-		this.marker.setPosition(newLatLng);
-		this.map.setCenter(newLatLng);
+		var newLatLngMarker = new google.maps.LatLng(coords.lat, coords.lng);
+		var newLatLngMap = new google.maps.LatLng(coords.lat+ offsetX, coords.lng+ offsetY);
+
+		this.marker.setPosition(newLatLngMarker);
+		this.map.setCenter(newLatLngMap);
 	};
 
-	CT.createMap = function (el, coords) {
-		return new Map (el, coords);
+	Map.prototype.setCenter = function (coords) {
+		var offsetPosition = this.offsetPosition || 0,
+			offsetX = this.offsetPosition.offsetX || 0,
+			offsetY = this.offsetPosition.offsetY || 0;
+
+		return {lat: (coords.lat + offsetX), lng: (coords.lng + offsetY)}
+	};
+
+	CT.createMap = function (el, coords, offsetPosition) {
+		return new Map (el, coords, offsetPosition);
 	};
 })(jQuery);

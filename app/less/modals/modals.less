@@ -63,4 +63,38 @@
 	}
 }
 
+.uk-slidenav-contrast {
+	color: #474747;
+}
+
+.uk-slidenav-position .uk-slidenav {
+	margin-top: -15px;
+	display: block;
+	width: auto;
+	height: auto;
+	line-height: 1;
+	font-size: 40px;
+	&:hover {
+		&:before {
+			color: @orange;
+		}
+	}
+	&:focus {
+		&:before {
+			color: @orange;
+		}
+	}
+	&:active {
+		&:before {
+			color: @orange;
+		}
+	}
+}
+
+.uk-slidenav-previous:before,
+.uk-slidenav-next:before {
+	font-size: 40px;
+	transition: color .15s linear;
+}
+
 /* END MODALS */

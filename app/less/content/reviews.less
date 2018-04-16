@@ -11,7 +11,7 @@
 	padding-left: 10%;
 	border-bottom: 1px solid #e8e8e8;
 	width: 40%;
-	background: url('../img/icon-png/blockquote.png') 0 0 no-repeat;
+	background: url('../img/icon-png/blockquote.png') 0 5px no-repeat;
 	&:nth-last-child(-n + 2) {
 		margin-bottom: 0;
 		@media @mob-w {
@@ -37,11 +37,13 @@
 		font-size: 21px;
 		line-height: 26px;
 		letter-spacing: .15px;
+		overflow: hidden;
 		@media @mob-w {
 			min-height: auto;
 		}
 		@media @tablet-w {
 			min-height: 168px;
+			max-height: 168px;
 		}
 	}
 	&__author {
@@ -56,6 +58,56 @@
 		letter-spacing: .11px;
 		a {
 			text-decoration: underline;
+		}
+	}
+	&--detail {
+		width: 100%;
+		border: none;
+		.review__text {
+			min-height: auto;
+		}
+	}
+}
+
+.review-photos-gallery {
+	font-size: 0;
+}
+
+.review-photo {
+
+	display: inline-block;
+	vertical-align: top;
+	@media @mob-w {
+		width: 48%;
+		margin-right: 4%;
+		margin-bottom: 20px;
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+	@media @tablet-w {
+		width: 30%;
+		margin-right: 5%;
+		margin-bottom: 30px;
+		&:nth-child(2n) {
+			margin-right: 5%;
+		}
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
+	@media @desk-w {
+		margin-right: 6.6666%;
+		margin-bottom: 40px;
+		width: 20%;
+		&:nth-child(2n) {
+			margin-right: 6.6666%;
+		}
+		&:nth-child(3n) {
+			margin-right: 6.6666%;
+		}
+		&:nth-child(4n) {
+			margin-right: 0;
 		}
 	}
 }

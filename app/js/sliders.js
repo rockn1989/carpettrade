@@ -84,9 +84,13 @@ $(function () {
 	var map;
 
 	if($('.slide__map').length !== 0) {
-		var $map = $('#map');
+		var $map = $('#map'),
+			offsetPosition = {
+				offsetX: 0.025,
+				offsetY: -0.03
+			};
 
-		map = CT.createMap($map[0], $('.map-slider .slide').eq(0).data('coords'));
+		map = CT.createMap($map[0], $('.map-slider .slide').eq(0).data('coords'), offsetPosition);
 	};
 
 	$('.map-slider').slick({
@@ -129,53 +133,67 @@ $(function () {
 	}).on('afterChange', function(event, slick, currentSlide, nextSlide) {
 		var coords = $(slick.$slides[currentSlide]).data('coords');
 
-		map.setCoords(coords);
+		map.setCoords(coords, offsetPosition);
 	});
 
 
 	// DETAIL SLIDER
 
- var sliderTotal = $(window).width() >= 1245 ? 3 : 3,
-			sliderPosition = $(window).width() >= 1245 ? true : false;
+	 var sliderTotal = $(window).width() >= 1245 ? 3 : 3,
+				sliderPosition = $(window).width() >= 1245 ? true : false;
 
- $('.detail-product-slider').slick({
-	slidesToShow: 1,
-	slidesToScroll: 1,
-	arrows: false,
-	autoplay: true,
-	lazyLoad: 'progressive',
-	prevArrow: '<div class="btn-slide slick-prev"><i class="icon-arrow-left"></i></div>',
-	nextArrow: '<div class="btn-slide slick-next"><i class="icon-arrow-right"></i></div>',
-	asNavFor: '.detail-product-preview-slider',
-	responsive: [
-	{
-		breakpoint: 959,
-		settings: {
-		centerMode: true,
-		centerPadding: '180px',
-		}
-	},
-	{
-		breakpoint: 767,
-		settings: {
-			centerMode: false,
-			centerPadding: '0px',
-		}
-	},
-]
-});
+	 $('.detail-product-slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		autoplay: true,
+		lazyLoad: 'progressive',
+		prevArrow: '<div class="btn-slide slick-prev"><i class="icon-arrow-left"></i></div>',
+		nextArrow: '<div class="btn-slide slick-next"><i class="icon-arrow-right"></i></div>',
+		asNavFor: '.detail-product-preview-slider',
+		responsive: [
+		{
+			breakpoint: 959,
+			settings: {
+			centerMode: true,
+			centerPadding: '180px',
+			}
+		},
+		{
+			breakpoint: 767,
+			settings: {
+				centerMode: false,
+				centerPadding: '0px',
+			}
+		},
+	]
+	});
 
-$('.detail-product-preview-slider').slick({
-	slidesToShow: sliderTotal,
-	slidesToScroll: 1,
-	asNavFor: '.detail-product-slider',
-	dots: false,
-	infinity: true,
-	centerMode: false,
-	lazyLoad: 'progressive',
-	focusOnSelect: true,
-	vertical: sliderPosition,
-	prevArrow: '<div class="btn-slide slick-prev"><i class="icon-up-arrow"></i></div>',
-	nextArrow: '<div class="btn-slide slick-next"><i class="icon-down-arrow"></i></div>',
-});
+	$('.detail-product-preview-slider').slick({
+		slidesToShow: sliderTotal,
+		slidesToScroll: 1,
+		asNavFor: '.detail-product-slider',
+		dots: false,
+		infinity: true,
+		centerMode: false,
+		lazyLoad: 'progressive',
+		focusOnSelect: true,
+		vertical: sliderPosition,
+		prevArrow: '<div class="btn-slide slick-prev"><i class="icon-up-arrow"></i></div>',
+		nextArrow: '<div class="btn-slide slick-next"><i class="icon-down-arrow"></i></div>',
+	});
+
+	// SHOPS DETAIL SLIDER
+	
+	if($('.shop-map').length !== 0) {
+		var $map = $('.shop-map');
+		map = CT.createMap($map[0], $map.data('coords'));
+	};
+
+	$('.shop-slider').slick({
+		arrows: true,
+		prevArrow: $(this).find('.slide-prev'),
+		nextArrow: $(this).find('.slide-next')
+	});
+
 });
