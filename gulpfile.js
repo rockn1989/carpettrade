@@ -3,6 +3,7 @@ var gulp = require("gulp"),
 		twig = require("gulp-twig"),
 		less = require("gulp-less"),
 		autoprefixer = require("gulp-autoprefixer"),
+		combineMq = require('gulp-combine-mq'),
 		rename    = require("gulp-rename"),
 		htmlreplace= require("gulp-html-replace"),
 		minify = require("gulp-csso"),
@@ -32,6 +33,9 @@ gulp.task("less", function() {
 	return gulp.src("app/less/main.less")
 				.pipe(less())
 				.pipe(autoprefixer(["last 15 version", "> 1%", 'firefox 14', "ie 8", "ie 7"], {cascade: true}))
+				.pipe(combineMq({
+        		beautify: true
+    			}))
 				.pipe(rename("style.css"))
 				.pipe(gulp.dest("app/css"))
 				.pipe(browserSync.reload({stream: true}))
