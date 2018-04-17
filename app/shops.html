@@ -25,147 +25,139 @@
 	<![endif]-->
 </head>
 
-
-
 <header id="header" class="header">
 	<div class="uk-container">
-		<div class="uk-grid">
-			<div class="uk-width-2-10">
-				<a href="/" class="logo">
-					<img src="img/logo.png" alt="">
-					<span class="logo__text">
-						сеть ковровых магазинов
-					</span>
-				</a>
-			</div>
-			<div class="uk-width-8-10">
-				<div class="header__top">
-					<div class="uk-grid">
-						<div class="uk-width-7-10">
-							<div class="header__top-contacts">
-								<div class="header__top-contacts-links">
-									<a href="#question-modal" class="link-question" data-uk-modal>Задать вопрос</a>
-									<a href="tel:+79161401818" class="link-tel icon-phone">+7 916 140 18 18</a>
-									<a href="mailto:info@carpettrade.ru" class="link-tel icon-mail">info@carpettrade.ru</a>
-									<a href="" class="search uk-float-right icon-search js__search-form">Поиск</a>
+		<div class="header-desktop uk-visible-large">
+			<div class="uk-grid">
+				<div class="uk-width-2-10">
+					<a href="/" class="logo">
+						<img src="img/logo.png" alt="">
+						<span class="logo__text">
+							сеть ковровых магазинов
+						</span>
+					</a>
+				</div>
+				<div class="uk-width-8-10">
+					<div class="header__top">
+						<div class="uk-grid">
+							<div class="uk-width-7-10">
+								<div class="header__top-contacts">
+									<div class="header__top-contacts-links">
+										<a href="#question-modal" class="link-question" data-uk-modal>Задать вопрос</a>
+										<a href="tel:+79161401818" class="link-tel icon-phone">+7 916 140 18 18</a>
+										<a href="mailto:info@carpettrade.ru" class="link-tel icon-mail">info@carpettrade.ru</a>
+										<a href="" class="search uk-float-right icon-search js__search-form">Поиск</a>
+									</div>
+									<form action="" class="search-form">
+										<input type="text" placeholder="Найдите свой ковер в нашем магазине">
+										<button type="submit">Найти</button>
+									</form>
 								</div>
-								<form action="" class="search-form">
-									<input type="text" placeholder="Найдите свой ковер в нашем магазине">
-									<button type="submit">Найти</button>
-								</form>
+							</div>
+							<div class="uk-width-3-10">
+								<a href="" class="basket uk-float-left">Корзина <span class="basket__counter">2</span></a>
+								<a href="" class="auth uk-float-right icon-enter">Войти</a>
 							</div>
 						</div>
-						<div class="uk-width-3-10">
-							<a href="" class="basket uk-float-left">Корзина <span class="basket__counter">2</span></a>
-							<a href="" class="auth uk-float-right icon-enter">Войти</a>
-						</div>
+					</div>
+					<div class="header__bottom">
+						<nav class="uk-navbar">
+							<ul class="uk-navbar-nav">
+								<li class="uk-parent" data-uk-dropdown="{justify: '#header'}">
+									<a href="#" class="uk-active">Каталог ковров</a>
+									<div class="uk-dropdown uk-dropdown-list">
+										<div class="uk-container">
+											<ul class="uk-grid dropdown-list">
+												<li class="uk-width-2-10">
+													<ul class="sublist">
+														<li class="sublist__item"><a href="#">Новинки</a></li>
+														<li class="sublist__item"><a href="#">Популярные (Хит продаж)</a></li>
+														<li class="sublist__item"><a href="#">Бюджетные ковры</a></li>
+														<li class="sublist__item"><a href="#">Средняя категория</a></li>
+														<li class="sublist__item"><a href="#">Элитные ковры</a></li>
+														<li class="sublist__item"><a href="#">Ручная работа</a></li>
+														<li class="sublist__item"><a href="#">Классический дизайн</a></li>
+														<li class="sublist__item"><a href="#">Современный дизайн</a></li>
+													</ul>
+												</li>
+												<li class="uk-width-2-10">
+													<div class="navbar__title">Дизайн</div>
+													<ul class="sublist">
+														<li class="sublist__item"><a href="#">Восточная классика</a></li>
+														<li class="sublist__item"><a href="#">Европейская классика</a></li>
+														<li class="sublist__item"><a href="#">Современная классика</a></li>
+														<li class="sublist__item"><a href="#">Этника</a></li>
+														<li class="sublist__item"><a href="#">Абстракции</a></li>
+														<li class="sublist__item"><a href="#">Длинноворсовые</a></li>
+														<li class="sublist__item"><a href="#">Детские</a></li>
+														<li class="sublist__item"><a href="#">Безворсовые</a></li>
+													</ul>
+												</li>
+												<li class="uk-width-2-10">
+													<div class="navbar__title">Материал</div>
+													<ul class="sublist">
+														<li class="sublist__item"><a href="#">Шерсть</a></li>
+														<li class="sublist__item"><a href="#">Шелк</a></li>
+														<li class="sublist__item"><a href="#">Бамбуковый шелк</a></li>
+														<li class="sublist__item"><a href="#">Вискоза</a></li>
+														<li class="sublist__item"><a href="#">Акрил</a></li>
+														<li class="sublist__item"><a href="#">Синтетика</a></li>
+													</ul>
+												</li>
+												<li class="uk-width-2-10">
+													<div class="navbar__title">Страна-производитель</div>
+													<ul class="sublist">
+														<li class="sublist__item"><a href="#">Турция</a></li>
+														<li class="sublist__item"><a href="#">Бельгия</a></li>
+														<li class="sublist__item"><a href="#">Иран</a></li>
+														<li class="sublist__item"><a href="#">Россия</a></li>
+														<li class="sublist__item"><a href="#">Белоруссия</a></li>
+														<li class="sublist__item"><a href="#">Молдова</a></li>
+													</ul>
+												</li>
+												<li class="uk-width-2-10">
+													<div class="navbar__title">Размер и форма</div>
+													<ul class="sublist">
+														<li class="sublist__item"><a href="#">Прикроватные ковры</a></li>
+														<li class="sublist__item"><a href="#">Небольшие размеры</a></li>
+														<li class="sublist__item"><a href="#">Средние размеры</a></li>
+														<li class="sublist__item"><a href="#">Большие размеры</a></li>
+														<li class="sublist__item"><a href="#">Прямоугольник</a></li>
+														<li class="sublist__item"><a href="#">Овал</a></li>
+														<li class="sublist__item"><a href="#">Круг</a></li>
+														<li class="sublist__item"><a href="#">Квадрат</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li class="uk-parent"><a href="#">О компании</a></li>
+								<li class="uk-parent"><a href="#">Оплата и доставка</a></li>
+								<li class="uk-parent"><a href="#">Услуги</a></li>
+								<li class="uk-parent"><a href="#">Магазины</a></li>
+								<li class="uk-parent"><a href="#">Отзывы</a></li>
+								<li class="uk-parent"><a href="#">Контакты</a></li>
+							</ul>
+						</nav>
 					</div>
 				</div>
-				<div class="header__bottom">
-					<nav class="uk-navbar">
-						<ul class="uk-navbar-nav">
-							<li class="uk-parent" data-uk-dropdown="{justify: '#header'}">
-								<a href="#" class="uk-active">Каталог ковров</a>
-								<div class="uk-dropdown uk-dropdown-list">
-									<div class="uk-container">
-										<ul class="uk-grid dropdown-list">
-											<li class="uk-width-2-10">
-												<ul class="sublist">
-													<li class="sublist__item"><a href="#">Новинки</a></li>
-													<li class="sublist__item"><a href="#">Популярные (Хит продаж)</a></li>
-													<li class="sublist__item"><a href="#">Бюджетные ковры</a></li>
-													<li class="sublist__item"><a href="#">Средняя категория</a></li>
-													<li class="sublist__item"><a href="#">Элитные ковры</a></li>
-													<li class="sublist__item"><a href="#">Ручная работа</a></li>
-													<li class="sublist__item"><a href="#">Классический дизайн</a></li>
-													<li class="sublist__item"><a href="#">Современный дизайн</a></li>
-												</ul>
-											</li>
-											<li class="uk-width-2-10">
-												<div class="navbar__title">Дизайн</div>
-												<ul class="sublist">
-													<li class="sublist__item"><a href="#">Восточная классика</a></li>
-													<li class="sublist__item"><a href="#">Европейская классика</a></li>
-													<li class="sublist__item"><a href="#">Современная классика</a></li>
-													<li class="sublist__item"><a href="#">Этника</a></li>
-													<li class="sublist__item"><a href="#">Абстракции</a></li>
-													<li class="sublist__item"><a href="#">Длинноворсовые</a></li>
-													<li class="sublist__item"><a href="#">Детские</a></li>
-													<li class="sublist__item"><a href="#">Безворсовые</a></li>
-												</ul>
-											</li>
-											<li class="uk-width-2-10">
-												<div class="navbar__title">Материал</div>
-												<ul class="sublist">
-													<li class="sublist__item"><a href="#">Шерсть</a></li>
-													<li class="sublist__item"><a href="#">Шелк</a></li>
-													<li class="sublist__item"><a href="#">Бамбуковый шелк</a></li>
-													<li class="sublist__item"><a href="#">Вискоза</a></li>
-													<li class="sublist__item"><a href="#">Акрил</a></li>
-													<li class="sublist__item"><a href="#">Синтетика</a></li>
-												</ul>
-											</li>
-											<li class="uk-width-2-10">
-												<div class="navbar__title">Страна-производитель</div>
-												<ul class="sublist">
-													<li class="sublist__item"><a href="#">Турция</a></li>
-													<li class="sublist__item"><a href="#">Бельгия</a></li>
-													<li class="sublist__item"><a href="#">Иран</a></li>
-													<li class="sublist__item"><a href="#">Россия</a></li>
-													<li class="sublist__item"><a href="#">Белоруссия</a></li>
-													<li class="sublist__item"><a href="#">Молдова</a></li>
-												</ul>
-											</li>
-											<li class="uk-width-2-10">
-												<div class="navbar__title">Размер и форма</div>
-												<ul class="sublist">
-													<li class="sublist__item"><a href="#">Прикроватные ковры</a></li>
-													<li class="sublist__item"><a href="#">Небольшие размеры</a></li>
-													<li class="sublist__item"><a href="#">Средние размеры</a></li>
-													<li class="sublist__item"><a href="#">Большие размеры</a></li>
-													<li class="sublist__item"><a href="#">Прямоугольник</a></li>
-													<li class="sublist__item"><a href="#">Овал</a></li>
-													<li class="sublist__item"><a href="#">Круг</a></li>
-													<li class="sublist__item"><a href="#">Квадрат</a></li>
-												</ul>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li class="uk-parent"><a href="#">О компании</a></li>
-							<li class="uk-parent"><a href="#">Оплата и доставка</a></li>
-							<li class="uk-parent"><a href="#">Услуги</a></li>
-							<li class="uk-parent"><a href="#">Магазины</a></li>
-							<li class="uk-parent"><a href="#">Отзывы</a></li>
-							<li class="uk-parent"><a href="#">Контакты</a></li>
-						</ul>
-					</nav>
-				</div>
 			</div>
+		</div>
+		<div class="header-mobile uk-hidden-large">
+			123
 		</div>
 	</div>
 	<div class="breadcrumbs-wrapper">
 		<div class="uk-container">
 			<ul class="breadcrumbs">
-	
-	
-	<li><a href="">Главная</a></li>
-	
-
-	
-	<li>Магазины</li>
-		
-
-</ul>
-
+			<li><a href="">Главная</a></li>
+			<li>Магазины</li>
+		</ul>
 		</div>
 	</div>
 </header>
-
-
 <body>
-
 <div class="content">
 	<div class="uk-container uk-container--medium">
 		<h1>Магазины</h1>
@@ -205,8 +197,6 @@
 		</div>
 	</div>
 </div>
-
-
 
 <footer class="footer">
 	<div class="uk-container">
@@ -275,9 +265,6 @@
 </footer>
 
 
-
-
-
 <div id="question-modal" class="uk-modal default-modal">
 	<div class="uk-modal-dialog">
 		<div class="uk-modal-header">
@@ -311,8 +298,6 @@
 	</div>
 </div>
 
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" defer></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwDIUu_o0Q-dltO2DV6UH7S7626ci_Kpg" defer></script>
 <script src="libs/jquery.mask.min.js" defer></script>
@@ -325,7 +310,6 @@
 <script src="js/catalog.js" defer></script>
 <script src="js/sliders.js" defer></script>
 <script src="js/main.js" defer></script>
-
 
 </body>
 </html>

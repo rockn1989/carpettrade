@@ -6,7 +6,7 @@ $(function () {
 		dots: true,
 		infinity: true,
 		cssEase: 'linear',
-		autoplay: true,
+		autoplay: false,
 		fade: true,
 		autoplaySpeed: 2000,
 		speed: 500,
@@ -91,10 +91,27 @@ $(function () {
 				offsetY: -0.03
 			};
 
+			if($(window).width() <= 960 ) {
+				offsetPosition = {
+					offsetX: 0,
+					offsetY: 0
+				};
+			};
+
 		map = CT.createMap($map[0], $('.map-slider .slide').eq(0).data('coords'), offsetPosition);
 	};
 
-	$('.map-slider').slick({
+
+	var $currentsSlides = $('.counter__current-slide'),
+		$allSlides = $('.counter__all-slides'),
+		$mainSlider = $('.map-slider');
+
+	$mainSlider.on('init', function (event, slick) {
+		$allSlides.text(slick.slideCount);
+		$currentsSlides.text(1);
+	})
+
+	$mainSlider.slick({
 		arrows: true,
 		dots: true,
 		infinity: true,
@@ -105,8 +122,8 @@ $(function () {
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		prevArrow: '<div class="btn-slide slick-prev"><i class="icon-arrow-left"></i></div>',
-		nextArrow: '<div class="btn-slide slick-next"><i class="icon-arrow-right"></i></div>',
+		prevArrow: $(this).find('.slide-prev'),
+		nextArrow: $(this).find('.slide-next'),
 		responsive: [
 			{
 				breakpoint: 1025,
@@ -133,9 +150,12 @@ $(function () {
 		]
 	}).on('afterChange', function(event, slick, currentSlide, nextSlide) {
 		var coords = $(slick.$slides[currentSlide]).data('coords');
-
 		map.setCoords(coords, offsetPosition);
+
+		$currentsSlides.text(currentSlide + 1);
 	});
+
+
 
 
 	// DETAIL SLIDER

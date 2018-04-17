@@ -84,7 +84,6 @@ var CT = CT || {};
 		var offsetPosition = this.offsetPosition || 0,
 			offsetX = this.offsetPosition.offsetX || 0,
 			offsetY = this.offsetPosition.offsetY || 0;
-
 		return {lat: (coords.lat + offsetX), lng: (coords.lng + offsetY)}
 	};
 
