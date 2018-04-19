@@ -3,7 +3,9 @@ var gulp = require("gulp"),
 		twig = require("gulp-twig"),
 		less = require("gulp-less"),
 		autoprefixer = require("gulp-autoprefixer"),
-		combineMq = require('gulp-combine-mq'),
+		plumber = require("gulp-plumber"),
+		cmq = require('gulp-combine-media-queries'),
+		gcmq = require('gulp-group-css-media-queries'),
 		rename    = require("gulp-rename"),
 		htmlreplace= require("gulp-html-replace"),
 		minify = require("gulp-csso"),
@@ -19,44 +21,44 @@ var gulp = require("gulp"),
 		clean     = require("gulp-clean");
 
 gulp.task("templates", function() {
-  return gulp.src("app/templates/*.html")
-         .pipe(twig())
-         .pipe(gulp.dest('app/'))
+	return gulp.src("app/templates/*.html")
+	 .pipe(twig())
+	 .pipe(gulp.dest('app/'))
 });
 
 gulp.task("clean", function() {
 	return gulp.src('app/img/icon-svg/sprite-svg.svg')
-					.pipe(clean({force: false}));
+		.pipe(clean({force: false}));
 });
 
 gulp.task("less", function() {
 	return gulp.src("app/less/main.less")
-				.pipe(less())
-				.pipe(autoprefixer(["last 15 version", "> 1%", 'firefox 14', "ie 8", "ie 7"], {cascade: true}))
-				.pipe(combineMq({
-        		beautify: true
-    			}))
-				.pipe(rename("style.css"))
-				.pipe(gulp.dest("app/css"))
-				.pipe(browserSync.reload({stream: true}))
+		.pipe(plumber())
+		.pipe(less())
+		.pipe(autoprefixer(["last 15 version", "> 1%", 'firefox 14', "ie 8", "ie 7"], {cascade: true}))
+		.pipe(gcmq())
+		.pipe(rename("style.css"))
+		.pipe(gulp.dest("app/css"))
+		.pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task("less:build", function() {
 	return gulp.src("app/less/main.less")
-				.pipe(less())
-				.pipe(autoprefixer(["last 15 version", "> 1%", 'firefox 14', "ie 8", "ie 7"], {cascade: true}))
-				.pipe(gulp.dest("app/css"))
-				.pipe(rename("style.css"))
-				.pipe(gulp.dest("build/app/css"));
+		.pipe(less())
+		.pipe(autoprefixer(["last 15 version", "> 1%", 'firefox 14', "ie 8", "ie 7"], {cascade: true}))
+		.pipe(gcmq())
+		.pipe(gulp.dest("app/css"))
+		.pipe(rename("style.css"))
+		.pipe(gulp.dest("build/app/css"));
 });
 
 gulp.task("svgstoreDev",["clean"], function() {
 	return gulp.src("app/img/icon-svg/*.svg")
-				.pipe(svgstore({
-					inlineSvg: true
-				}))
-				.pipe(rename("sprite-svg.svg"))
-				.pipe(gulp.dest("app/img/icon-svg/"))
+		.pipe(svgstore({
+			inlineSvg: true
+		}))
+		.pipe(rename("sprite-svg.svg"))
+		.pipe(gulp.dest("app/img/icon-svg/"))
 });
 
 gulp.task("serve", ["templates", "less", "svgstore"], function() {
@@ -74,7 +76,7 @@ gulp.task("serve", ["templates", "less", "svgstore"], function() {
 });
 
 gulp.task('dev', function() {
-  gulp.watch("app/templates/**/*.html", ["templates"], browserSync.reload);
+	gulp.watch("app/templates/**/*.html", ["templates"], browserSync.reload);
 });
 
 gulp.task("images", function() {
@@ -114,44 +116,44 @@ gulp.task("del", function() {
 
 gulp.task("svgmin", function() {
 	return gulp.src("app/img/icon-svg/*.svg")
-				.pipe(svgmin())
-				.pipe(gulp.dest("build/app/img/icon-svg"))
+		.pipe(svgmin())
+		.pipe(gulp.dest("build/app/img/icon-svg"))
 });
 
 gulp.task("removeSvgFill", function() {
 	return gulp.src("app/img/svg/*.svg")
-					.pipe(cheerio({
-						run: function($) {
-							$("[fill]").removeAttr("fill");
-						},
-						parseOptions: {xmlMode: true}
-					}))
-					.pipe(gulp.dest("app/img/svg/"))
+		.pipe(cheerio({
+			run: function($) {
+				$("[fill]").removeAttr("fill");
+			},
+			parseOptions: {xmlMode: true}
+		}))
+		.pipe(gulp.dest("app/img/svg/"))
 });
 
 gulp.task("cssmin", function() {
 	return gulp.src("build/app/css/style.css")
-				 .pipe(minify())
-				 .pipe(rename("style.min.css"))
-				 .pipe(gulp.dest("build/app/css"))
+		.pipe(minify())
+		.pipe(rename("style.min.css"))
+		.pipe(gulp.dest("build/app/css"))
 });
 
 gulp.task("svgstore", function() {
 	gulp.src("app/img/icon-svg/*.svg")
-			.pipe(svgstore({
-				inlineSvg: true
-			}))
-			.pipe(rename("sprite-svg.svg"))
-			.pipe(gulp.dest("app/img/icon-svg/"));
+		.pipe(svgstore({
+			inlineSvg: true
+		}))
+		.pipe(rename("sprite-svg.svg"))
+		.pipe(gulp.dest("app/img/icon-svg/"));
 });
 
 gulp.task("svgstore:build",["svgmin"], function() {
 	return gulp.src("build/app/img/icon-svg/*.svg")
-				.pipe(svgstore({
-					inlineSvg: true
-				}))
-				.pipe(rename("sprite-svg.svg"))
-				.pipe(gulp.dest("build/app/img/icon-svg"))
+		.pipe(svgstore({
+			inlineSvg: true
+		}))
+		.pipe(rename("sprite-svg.svg"))
+		.pipe(gulp.dest("build/app/img/icon-svg"))
 });
 
 
