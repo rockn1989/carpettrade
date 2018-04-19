@@ -167,12 +167,24 @@
 		font-size: 36px;
 		line-height: 50px;
 		font-weight: 500;
+		max-width: 80%;
 	}
 }
 
 .sliders-list {
+	.slick-list {
+		@media @tablet-w {
+			margin: 0 -15px;
+		}
+	}
 	.slide {
-		margin-right: 30px;
+		margin: 0 15px;
+		@media (max-width: 480px) {
+			margin: 0;
+		}
+		@media @tablet-w {
+			margin: 0 15px;
+		}
 	}
 	.slick-prev:before,
 	.slick-next:before {
@@ -203,9 +215,16 @@
 	.slick-prev {
 		top: -75px;
 		left: auto;
-		right: 4.5%;
+		@media @mob-w {
+			right: 13.5%;
+		}
+		@media @tablet-w {
+			right: 9.5%;
+		}
+		@media @desk-w {
+			right: 4.5%;
+		}
 	}
-
 	.slick-next {
 		top: -75px;
 		right: 0;

@@ -46,7 +46,7 @@ $(function () {
 		arrows: true,
 		dots: false,
 		slidesToShow: 3,
-		autoplay: true,
+		autoplay: false,
 		autoplaySpeed: 3000,
 		speed: 1500,
 		centerMode: true,
@@ -58,7 +58,7 @@ $(function () {
 			{
 				breakpoint: 1025,
 				settings: {
-					slidesToShow: 1,
+					slidesToShow: 3,
 					slidesToScroll: 1,
 					infinite: true,
 				}
@@ -66,13 +66,23 @@ $(function () {
 			{
 				breakpoint: 940,
 				settings: {
-					slidesToShow: 1,
+					centerPadding: '0',
+					slidesToShow: 3,
 					slidesToScroll: 1
 				}
 			},
 			{
-				breakpoint: 600,
+				breakpoint: 768,
 				settings: {
+					centerPadding: '0',
+					slidesToShow: 2,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					centerPadding: '0',
 					slidesToShow: 1,
 					slidesToScroll: 1
 				}

@@ -196,8 +196,22 @@
 	&__img {
 		margin-bottom: 25px;
 		padding: 45px 55px;
-		min-height: 400px;
+		height: 400px;
+		text-align: center;
 		background-color: #f6f6f6;
+		&:after {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+		@media @mob-w {
+			padding: 35px 5%;
+		}
+		img {
+			display: inline;
+			max-height: 100%;
+		}
 	}
 	&__name {
 		margin-bottom: 10px;

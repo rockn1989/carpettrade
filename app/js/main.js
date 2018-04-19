@@ -58,28 +58,75 @@ $(function() {
 	};
 
 
-/* MASK FORM */
-$('.js__input-phone').mask('+7 999 999-99-99', {clearIfNotMatch: true}).focus(function (e) {
-  if (!$(this).val()) {
-    $(this).val('+7 ');
-  }
-});
+	// SHOW MOBILE FORM
+	var $mobileForm = $('.mobile-form');
 
-//FORM VALIDATE
-  if($('form').is('.default-form')) {
+	$('.js__show-form').on('click', function (e) {
+		e.preventDefault();
+		$mobileForm.slideToggle('350').find('input').focus();
+	})
 
-    $('.default-form').validate({
-      rules: {
-        email: {
-          required: true,
-          email: true
-        }
-      },
-      messages: {
-        email: "Обязательноe поле",
-      },
-    });
-  };
+
+	// MASK FORM
+
+	$('.js__input-phone').mask('+7 999 999-99-99', {clearIfNotMatch: true}).focus(function (e) {
+		if (!$(this).val()) {
+			$(this).val('+7 ');
+		}
+	});
+
+
+	//FORM VALIDATE
+
+	if($('form').is('.default-form')) {
+
+		$('.default-form').validate({
+			rules: {
+				email: {
+					required: true,
+					email: true
+				}
+			},
+			messages: {
+				email: "Обязательноe поле",
+			},
+		});
+	};
+
+
+	// OPEN MOBILE SUBMENU
+	
+	$('.js__menu-sublist-toggle').on('click', function (e) {
+		e.preventDefault();
+		var self = $(this),
+			blockParent = self.parent('a'),
+			siblingsList = blockParent.siblings('.menu-sublist');
+
+		if(blockParent.hasClass('open')) {
+			siblingsList.stop().slideUp('350', function () {
+				blockParent.removeClass('open');
+			});
+		} else {
+			siblingsList.stop().slideDown('350', function () {
+				blockParent.addClass('open');
+			});
+		}
+
+		self.toggleClass('open');
+	});
+
+
+	// OPEN MOBILE FOOTER SUBMENU
+	
+	$('[data-role="toggle-list"] i').on('click', function (e) {
+		e.preventDefault();
+		var self = $(this),
+			blockParent = self.parent('[data-role="toggle-list"]'),
+			siblingsList = blockParent.siblings('.footer__list');
+
+		self.toggleClass('open');
+		siblingsList.stop().slideToggle('350');
+	});
 
 
 	// DISABLED UIKIT ANIMATION FOR MOBILE
