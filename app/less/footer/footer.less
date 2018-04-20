@@ -49,7 +49,7 @@
 			display: none;
 		}
 		@media @tablet-w {
-			display: block;
+			display: block !important;
 		}
 	}
 	&__list-item {
@@ -74,6 +74,12 @@
 
 .soc-list {
 	margin-top: 52px;
+	@media @mob-w {
+		margin-top: 20px;
+	}
+	@media @tablet-w {
+		margin-top: 52px;
+	}
 	&__link {
 		display: inline-block;
 		vertical-align: middle;
@@ -99,8 +105,8 @@
 
 .dev {
 	position: relative;
-	margin-top: 90px;
-	padding-bottom: 50px;
+	margin-top: 30px;
+	padding-left: 25px;
 	display: block;
 	color: #474747;
 	font-family: @mainFont !important;
@@ -109,7 +115,7 @@
 	&:before {
 		position: absolute;
 		left: 0;
-		bottom: 0;
+		top: 0;
 		font-size: 20px;
 		color: @orange;
 		font-family: 'icomoon' !important;

@@ -122,7 +122,7 @@ $(function() {
 		e.preventDefault();
 		var self = $(this),
 			blockParent = self.parent('[data-role="toggle-list"]'),
-			siblingsList = blockParent.siblings('.footer__list');
+			siblingsList = blockParent.parent().find('.footer__list');
 
 		self.toggleClass('open');
 		siblingsList.stop().slideToggle('350');
