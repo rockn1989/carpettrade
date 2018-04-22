@@ -163,11 +163,23 @@
 .products-slider {
 	margin-bottom: 90px;
 	&__title {
-		margin-bottom: 50px;
-		font-size: 36px;
-		line-height: 50px;
 		font-weight: 500;
 		max-width: 80%;
+		@media @mob-w {
+			margin-bottom: 30px;
+			font-size: 24px;
+			line-height: 30px;
+		}
+		@media @tablet-w {
+			margin-bottom: 40px;
+			font-size: 30px;
+			line-height: 50px;
+		}
+		@media @desk-w {
+			margin-bottom: 50px;
+			font-size: 36px;
+			line-height: 50px;
+		}
 	}
 }
 
@@ -213,21 +225,31 @@
 		}
 	}
 	.slick-prev {
-		top: -75px;
 		left: auto;
 		@media @mob-w {
-			right: 13.5%;
+			top: -45px;
+			right: 14.5%;
 		}
 		@media @tablet-w {
+			top: -65px;
 			right: 9.5%;
 		}
 		@media @desk-w {
+			top: -75px;
 			right: 4.5%;
 		}
 	}
 	.slick-next {
-		top: -75px;
 		right: 0;
+		@media @mob-w {
+			top: -45px;
+		}
+		@media @tablet-w {
+			top: -65px;
+		}
+		@media @desk-w {
+			top: -75px;
+		}
 	}
 }
 
@@ -535,6 +557,15 @@
 	float: right;
 	.slide {
 		position: relative;
+		@media @tablet-w {
+			border: 10px solid transparent;
+			&.slick-current {
+				border-color: #ffffff;
+			}
+		}
+		img {
+			margin: 0 auto;
+		}
 	}
 	.status {
 		position: absolute;
@@ -550,12 +581,34 @@
 			background-color: @orange;
 		}
 	}
+	@media @mob-w {
+		width: 100%;
+		float: none;
+	}
+	@media (min-width: 1245px) {
+		width: 72%;
+		float: right;
+	}
 }
 
 .detail-product-preview-slider {
 	width: 15%;
 	height: 639px;
 	min-width: 120px;
+	@media @mob-w {
+		margin-top: 30px;
+		padding: 0 20px;
+		display: block;
+		width: 100%;
+		height: auto;
+		float: none;
+	}
+	@media (min-width: 1245px) {
+		margin-top: 0;
+		width: 15%;
+		height: 639px;
+		min-width: 120px;
+	}
 	.slide {
 		margin-bottom: 10px;
 		height: 93px;
@@ -598,12 +651,32 @@
 		top: -25px;
 		left: 50%;
 		transform: translateX(-50%);
+		@media @mob-w {
+			top: 50%;
+			left: 0;
+			transform: translateX(0) translateY(-50%) rotate(-90deg);
+		}
+		@media (min-width: 1245px) {
+			top: -25px;
+			left: 50%;
+			transform: translateX(-50%) translateY(0) rotate(0);
+		}
 	}
 	.slick-next {
 		top: auto;
 		bottom: 0;
 		right: 50%;
 		transform: translateX(50%);
+		@media @mob-w {
+			bottom: 50%;
+			right: 0;
+			transform: translateX(0) translateY(50%) rotate(-90deg);
+		}
+		@media (min-width: 1245px) {
+			bottom: 0;
+			right: 50%;
+			transform: translateX(50%) translateY(0) rotate(0);
+		}
 	}
 }
 

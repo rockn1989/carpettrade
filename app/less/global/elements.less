@@ -8,10 +8,19 @@ h1,h2,h3,h4,h5 {
 }
 
 h1, .title-h1 {
-	margin-bottom: 40px;
-	font-size: 40px;
-	line-height: 50px;
 	font-weight: 500;
+	@media @mob-w {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		font-size: 30px;
+		line-height: 36px;
+	}
+	@media @tablet-w {
+		margin-top: 0;
+		margin-bottom: 40px;
+		font-size: 40px;
+		line-height: 50px;
+	}
 }
 
 h2, .title-h2 {
@@ -19,6 +28,10 @@ h2, .title-h2 {
 	font-size: 30px;
 	line-height: 36px;
 	font-weight: 500;
+	@media @mob-w {
+		font-size: 24px;
+		line-height: 30px;
+	}
 }
 
 h3, .title-h3 {
@@ -26,6 +39,10 @@ h3, .title-h3 {
 	font-size: 26px;
 	line-height: 32px;
 	font-weight: 500;
+	@media @mob-w {
+		font-size: 20px;
+		line-height: 26px;
+	}
 }
 
 h4, .title-h4 {
@@ -33,6 +50,10 @@ h4, .title-h4 {
 	font-size: 22px;
 	line-height: 28px;
 	font-weight: 500;
+	@media @mob-w {
+		font-size: 16px;
+		line-height: 22px;
+	}
 }
 
 h5, .title-h5 {
@@ -40,6 +61,10 @@ h5, .title-h5 {
 	font-size: 16px;
 	line-height: 22px;
 	font-weight: 500;
+	@media @mob-w {
+		font-size: 16px;
+		line-height: 22px;
+	}
 }
 
 p {
@@ -114,7 +139,11 @@ button.btn {
 	margin-bottom: 50px;
 	background-color: #f6f6f6;
 	@media @mob-w {
+		display: none;
+	}
+	@media @tablet-w {
 		margin: 20px 0;
+		display: block;
 	}
 	@media @desk-w {
 		margin-top: 0;
@@ -126,6 +155,12 @@ button.btn {
 	padding: 0;
 	list-style: none;
 	font-size: 0;
+	@media @mob-w {
+		display: none;
+	}
+	@media @tablet-w {
+		display: block;
+	}
 	li {
 		margin-right: 10px;
 		height: 60px;
@@ -229,8 +264,16 @@ button.btn {
 	}
 	&--detail-select {
 		width: 100% !important;
+		@media @mob-w {
+			max-width: 260px;
+		}
+		@media @tablet-w {
+			max-width: 285px;
+		}
 	}
 	.select2-results__option {
+		padding: 10px 20px;
+		background-color: #d4d4d4;
 		transition: background-color .3s linear;
 		&:hover {
 			background-color: #f6f6f6;
@@ -249,6 +292,12 @@ button.btn {
 
 ul.uk-switcher {
 	padding: 50px 0;
+	@media @mob-w {
+		padding: 30px 0;
+	}
+	@media @tablet-w {
+		padding: 50px 0;
+	}
 	.tab-text {
 		margin-bottom: 30px;
 		color: #474747;
@@ -259,6 +308,12 @@ ul.uk-switcher {
 }
 .uk-tab {
 	border-bottom: 1px solid #e8e8e8;
+	.uk-nav-dropdown>li>a {
+		font-size: 18px;
+	}
+	.uk-dropdown-small .uk-nav {
+		padding: 10px;
+	}
 }
 
 .uk-tab>li {
@@ -280,6 +335,9 @@ ul.uk-switcher {
 		color: @orange;
 		background-color: transparent;
 	}
+	@media @mob-w {
+		font-size: 20px;
+	}
 }
 
 .uk-tab>li.uk-active>a {
@@ -290,6 +348,7 @@ ul.uk-switcher {
 	margin-bottom: 40px;
 	height: 260px;
 	overflow: hidden;
+	overflow-x: auto;
 	transition: height .3s ease;
 	&.open {
 		height: 100%;
@@ -328,6 +387,7 @@ ul.uk-switcher {
 table.product-options {
 	width: 100%;
 	max-width: 775px;
+	min-width: 450px;
 	border-collapse: collapse;
 	tr:nth-child(odd) {
 		background-color: #f6f6f6;

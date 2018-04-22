@@ -170,14 +170,14 @@ $(function () {
 
 	// DETAIL SLIDER
 
-	 var sliderTotal = $(window).width() >= 1245 ? 3 : 3,
+	 var sliderTotal = $(window).width() >= 1245 ? 3 : 2,
 				sliderPosition = $(window).width() >= 1245 ? true : false;
 
 	 $('.detail-product-slider').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
-		autoplay: true,
+		autoplay: false,
 		lazyLoad: 'progressive',
 		prevArrow: '<div class="btn-slide slick-prev"><i class="icon-arrow-left"></i></div>',
 		nextArrow: '<div class="btn-slide slick-next"><i class="icon-arrow-right"></i></div>',
@@ -201,7 +201,7 @@ $(function () {
 	});
 
 	$('.detail-product-preview-slider').slick({
-		slidesToShow: sliderTotal,
+		slidesToShow: 3,
 		slidesToScroll: 1,
 		asNavFor: '.detail-product-slider',
 		dots: false,
@@ -212,7 +212,22 @@ $(function () {
 		vertical: sliderPosition,
 		prevArrow: '<div class="btn-slide slick-prev"><i class="icon-up-arrow"></i></div>',
 		nextArrow: '<div class="btn-slide slick-next"><i class="icon-down-arrow"></i></div>',
+		responsive: [
+		{
+			breakpoint: 960,
+			settings: {
+				slidesToShow: 3
+			}
+		},
+		{
+			breakpoint: 767,
+			settings: {
+				slidesToShow: 2
+			}
+		},
+	]
 	});
+
 
 	// SHOPS DETAIL SLIDER
 
