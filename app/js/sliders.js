@@ -114,14 +114,14 @@ $(function () {
 
 	var $currentsSlides = $('.counter__current-slide'),
 		$allSlides = $('.counter__all-slides'),
-		$mainSlider = $('.map-slider');
+		$mapSlider = $('.map-slider');
 
-	$mainSlider.on('init', function (event, slick) {
+	$mapSlider.on('init', function (event, slick) {
 		$allSlides.text(slick.slideCount);
 		$currentsSlides.text(1);
 	})
 
-	$mainSlider.slick({
+	$mapSlider.slick({
 		arrows: true,
 		dots: true,
 		infinity: true,
@@ -170,17 +170,14 @@ $(function () {
 
 	// DETAIL SLIDER
 
-	 var sliderTotal = $(window).width() >= 1245 ? 3 : 2,
-				sliderPosition = $(window).width() >= 1245 ? true : false;
+	 var sliderPosition = $(window).width() >= 1245 ? true : false;
 
 	 $('.detail-product-slider').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		arrows: false,
+		arrows: true,
 		autoplay: false,
 		lazyLoad: 'progressive',
-		prevArrow: '<div class="btn-slide slick-prev"><i class="icon-arrow-left"></i></div>',
-		nextArrow: '<div class="btn-slide slick-next"><i class="icon-arrow-right"></i></div>',
 		asNavFor: '.detail-product-preview-slider',
 		responsive: [
 		{

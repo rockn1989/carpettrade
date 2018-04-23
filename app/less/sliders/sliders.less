@@ -162,6 +162,9 @@
 
 .products-slider {
 	margin-bottom: 90px;
+	&.preload {
+		height: 471px;
+	}
 	&__title {
 		font-weight: 500;
 		max-width: 80%;
@@ -563,6 +566,9 @@
 				border-color: #ffffff;
 			}
 		}
+		@media @desk-w {
+			border: none;
+		}
 		img {
 			margin: 0 auto;
 		}
@@ -570,11 +576,11 @@
 	.status {
 		position: absolute;
 		top: 0;
-		left: 0;
+		left: 1px;
 		font-size: 14px;
 		z-index: 50;
 		&>div {
-			padding: 2px 5px;
+			padding: 7px 5px;
 			color: #ffffff;
 			text-transform: uppercase;
 			letter-spacing: .8px;
@@ -589,29 +595,69 @@
 		width: 72%;
 		float: right;
 	}
+	.slick-prev, 
+	.slick-next {
+		width: 0;
+		height: 0;
+		z-index: 200;
+		opacity: 0;
+		transition: opacity .15s linear;
+		&:before {
+			content: "\f104";
+			color: #474747;
+			font-size: 40px;
+			font-family: FontAwesome;
+			transition: color .15s linear;
+		}
+		&:hover {
+			&:before {
+				color: @orange;
+			}
+		}
+	}
+	.slick-prev {
+		left: 0;
+	}
+	.slick-next {
+		right: 15px;
+		&:before {
+			content: "\f105";
+    	font-family: FontAwesome;
+		}
+	}
+	&:hover {
+		.slick-prev, 
+		.slick-next {
+			opacity: 1;
+		}
+	}
 }
 
 .detail-product-preview-slider {
-	width: 15%;
+	//width: 15%;
 	height: 639px;
-	min-width: 120px;
 	@media @mob-w {
 		margin-top: 30px;
 		padding: 0 20px;
 		display: block;
 		width: 100%;
-		height: auto;
+		max-width: none;
+		height: 103px;
 		float: none;
 	}
+
 	@media (min-width: 1245px) {
 		margin-top: 0;
+		padding: 0;
 		width: 15%;
 		height: 639px;
-		min-width: 120px;
+		min-width: 140px;
+		max-width: 140px;
 	}
 	.slide {
 		margin-bottom: 10px;
 		height: 93px;
+		width: 120px;
 		border: 10px solid transparent;
 		outline: none;
 		transition: border-color .3s linear;
@@ -624,6 +670,14 @@
 		&.slick-current {
 			border-color: #ffffff;
 			outline: none;
+		}
+		@media @desk-w {
+			&:after {
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				height: 100%;
+			}
 		}
 	}
 	.slick-prev,

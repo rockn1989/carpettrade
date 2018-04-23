@@ -62,10 +62,25 @@
 	margin-bottom: 60px;
 	display: flex;
 	justify-content: space-between;
+	@media @mob-w {
+		flex-wrap: wrap;
+	}
+	@media @desk-w {
+		flex-wrap: nowrap;
+	}
 	&>div {
 		position: relative;
-		padding-left: 6.5%;
-		//width: 33%;
+		
+		@media @mob-w {
+			margin-bottom: 30px;
+			padding-left: 45px;
+			width: 100%;
+		}
+		@media @desk-w {
+			margin-bottom: 0;
+			padding-left: 6.5%;
+			width: auto;
+		}
 		&:last-child {
 			margin-right: 0;
 		}
@@ -76,9 +91,33 @@
 			color: @orange;
 			.icomoon();
 		}
+		&.shop-contacts__address {
+			&:after {
+				@media @mob-w {
+					top: 3px;
+				}
+			}
+			@media @desk-w {
+				width: 33%;
+			}
+		}
+		&.shop-contacts__tel {
+			&:after {
+				@media @mob-w {
+					top: 5px;
+				}
+			}
+		}
+		&.shop-contacts__soc {
+			&:after {
+				@media @mob-w {
+					top: 3px;
+				}
+			}
+		}
 	}
 	&__address {
-		margin-right: 10%;
+		//margin-right: 10%;
 		width: 33%;
 		color: #474747;
 		font-size: 21px;
@@ -98,9 +137,15 @@
 			content: '\e906';
 			font-size: 30px;
 		}
+		a {
+			display: block;
+		}
 		a:first-child {
 			margin-bottom: 15px;
 			display: inline-block;
+			@media @mob-w {
+				margin-bottom: 5px;
+			}
 		}
 	}
 	&__email {
@@ -119,6 +164,14 @@
 .shop-map {
 	width: 100%;
 	height: 100%;
+	@media @mob-w {
+		margin-top: 30px;
+		height: 350px;
+	}
+	@media @tablet-w {
+		margin-top: 0;
+		height: 100%;
+	}
 }
 
 /* SHOPS END */

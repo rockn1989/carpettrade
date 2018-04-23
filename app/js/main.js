@@ -5,27 +5,40 @@ $(function() {
 
 	// MAIN SLIDER
 
-/*	$('div.preload').each(function(i, el) {
-		var imgSrc = $(el).find('.slide__inner').css('background-image') ||
-								 $(el).find('.slide').css('background-image');
-		if(imgSrc) {
-			var src = imgSrc.replace(/(^url\()|(\)$|[\"\'])/g, ''),
-					img = $('<img>').attr('src', src).on('load', function() {
-						$(el).removeClass('preload');
-					});
-		}
-	});
-*/
 
-	$('div.preload').each(function(i, el) {
-		var imgSrc = $(el).find('[data-preload]').css('background-image');
-		if(imgSrc) {
-			var src = imgSrc.replace(/(^url\()|(\)$|[\"\'])/g, ''),
+	function preloadImg (targetElement) {
+
+		var _self = $(targetElement);
+
+		_self.each(function(i, el) {
+
+			var imgSrc = $(el).find('[data-bg-preload]').css('background-image') || $(el).find('img');
+
+
+			// Если картинка лежит фоном
+
+			if(typeof imgSrc == 'string') {
+				var src = imgSrc.replace(/(^url\()|(\)$|[\"\'])/g, ''),
 					img = $('<img>').attr('src', src).on('load', function() {
-						$(el).removeClass('preload');
+						_self.removeClass('preload');
 					});
-		}
-	});
+			} else {	
+
+				// Если картинка лежит через тег img
+
+				$.each(imgSrc, function (i, el) {
+					var src = $(el).attr('src');
+					$('<img>').attr('src', src).on('load', function() {
+						_self.removeClass('preload')
+					});
+				});
+			}
+
+		});
+	};
+
+
+	preloadImg('div.preload');
 
 
 	// SHOW FORM

@@ -538,11 +538,17 @@
 		}
 		.aside-block__title {
 			margin-right: 10%;
-			font-size: 30px;
-			line-height: 36px;
 			color: #000000;
 			&:before {
 				top: 28%;
+			}
+			@media @mob-w {
+				font-size: 24px;
+				line-height: 30px;
+			}
+			@media @desk-w {
+				font-size: 30px;
+				line-height: 36px;
 			}
 		}
 		.aside-block__text {
