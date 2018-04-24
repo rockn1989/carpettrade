@@ -14,6 +14,17 @@
 				@media (min-width: 960px) and (max-width: 1220px) {
 					margin-right: 4%;
 				}
+				&:last-child {
+					margin-right: 3%;
+				}
+			}
+		}
+		&-options-list {
+			.clearfix();
+			&.enter {
+				.basket {
+					margin-left: 0;
+				}
 			}
 		}
 		@media (min-width: 960px) and (max-width: 1220px) {
@@ -103,7 +114,7 @@
 .basket {
 	position: relative;
 	margin-left: 22%;
-	padding-left: 40px;
+	padding-left: 15%;
 	&__counter {
 		position: absolute;
 		top: -3px;
@@ -120,6 +131,7 @@
 	@media (min-width: 960px) and (max-width: 1220px) {
 		margin: 0;
 		margin-bottom: 10px;
+		padding-left: 30%;
 		text-align: right;
 		float: right;
 	}
@@ -188,6 +200,7 @@
 		}
 		&.icon-basket {
 			position: relative;
+			font-weight: bold;
 			.basket-counter {
 				position: absolute;
 				top: 0;
@@ -197,6 +210,7 @@
 				color: #ffffff;
 				line-height: 20px;
 				font-size: 12px;
+				font-family: @mainFont;
 				text-align: center;
 				border-radius: 50%;
 				background-color: @orange;

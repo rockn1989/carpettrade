@@ -8,30 +8,43 @@
 		<h1 class="title-h1">Классический дизайн</h1>
 		<div class="catalog">
 			<div class="uk-grid">
-				<div class="uk-width-medium-1-4">
+				<div class="uk-width-1-1 uk-width-large-1-4 responsive-filter" id="offcanvas-filter">
 					<div class="catalog-filter">
+						<ul>
+							<li>lorem-1</li>
+							<li>lorem-2</li>
+							<li>lorem-3</li>
+							<li>lorem-4</li>
+							<li>lorem-5</li>
+						</ul>					
 						<img src="img/filter.png" alt="">
 					</div>
 				</div>
-				<div class="uk-width-medium-3-4">
+				<div class="uk-width-1-1 uk-width-large-3-4">
 					<div class="catalog-content">
-						<div class="catalog__sort">
-							<div class="sort__status">
-								<select class="select2" data-theme="sort__status">
-									<option value="">По пулярности, возрастание</option>
-									<option value="">По цене, убывание</option>
-									<option value="">По цене, возрастание</option>
-								</select>
-							</div>
-							<div class="sort__count">
-								<div class="sort__count-text">
-									Показывать товаров
+						
+						<div class="catalog-header">
+							<div class="catalog__sort">
+								<div class="sort__status">
+									<select class="select2" data-theme="sort__status">
+										<option value="">По пулярности</option>
+										<option value="">Цена, убывание</option>
+										<option value="">Цена, возрастание</option>
+									</select>
 								</div>
-								<select class="select2" data-theme="sort__count">
-									<option value="">12</option>
-									<option value="" selected>24</option>
-									<option value="">36</option>
-								</select>
+								<div class="sort__count">
+									<div class="sort__count-text">
+										Показывать товаров
+									</div>
+									<select class="select2" data-theme="sort__count">
+										<option value="">12</option>
+										<option value="" selected>24</option>
+										<option value="">36</option>
+									</select>
+								</div>
+							</div>
+							<div class="catalog-filter-btn uk-hidden-large">
+								<a href="#offcanvas-filter" class="js__catalog-filter-btn icon-controls" data-uk-offcanvas></a>
 							</div>
 						</div>
 						<div class="catalog__list-wrapper">

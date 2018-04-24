@@ -60,12 +60,66 @@
 	}
 }
 
+.catalog__sort {
+	@media @mob-w {
+		width: 91%;
+		display: inline-block;
+		vertical-align: top;
+	}
+	@media @desk-w {
+		width: 100%;
+	}
+}
+.catalog-filter-btn {
+	float: right;
+	text-align: right;
+	@media @mob-w {
+		width: 8%;
+		display: inline-block;
+		vertical-align: top;
+	}
+	span {
+		display: inline-block;
+		vertical-align: middle;
+		height: 54px;
+		color: #474748;
+		font-size: 18px;
+		line-height: 54px;
+		@media @mob-w {
+			display: none;
+		}
+		@media @tablet-w {
+			display: inline-block;
+		}
+	}
+	a {
+		margin-left: 5%;
+		display: inline-block;
+		vertical-align: middle;
+		color: @orange;
+		font-size: 30px;
+		line-height: 54px;
+		font-weight: bold;
+	}
+}
 .sort {
 	&__status {
 		float: left;
+		@media @mob-w {
+			width: 100%;
+		}
+		@media @tablet-w {
+			width: auto;
+		}
 	}
 	&__count {
 		float: right;
+		@media @mob-w {
+			display: none;
+		}
+		@media @tablet-w {
+			display: block;
+		}
 	}
 	&__count-text {
 		margin-right: 40px;
