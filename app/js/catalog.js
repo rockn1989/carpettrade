@@ -2,17 +2,7 @@ $(function () {
 
 	'use strict';
 
-	// SELECT2
-
-	$.each($('.select2'), function (i, el) {
-		$(el).select2({
-			minimumResultsForSearch: -1,
-			theme: $(el).data('theme')
-		});
-	})
-
-
-	// CATALOG DETAIL TABLE
+	// Каталог-детальная: открытие/закрытие таблицы
 
 	var tableWrapperHeight = $('.tab-table-wrapper').outerHeight();
 
@@ -31,12 +21,16 @@ $(function () {
 	});
 
 
-	// CATALOG FILTER RESPONSIVE
+	// Фильтр Каталога: скрыть на мобильных устройствах
 	
 	var filter = $('.responsive-filter');
 
+	/**
+	 * @param {string} filter Класс/id фильтра
+	 */
 	function filterInit() {
-		if($(window).width() <= 959) {
+		var scrollWidth = parseInt(window.innerWidth) - parseInt(document.body.clientWidth);
+		if(($(window).width() + scrollWidth) < 960) {
 			if(!$(filter).hasClass('uk-offcanvas')) {
 				$(filter).addClass('uk-offcanvas');
 				$(filter).attr('id', 'offcanvas-filter');
@@ -56,26 +50,106 @@ $(function () {
 		}
 	};
 
+
+	/**
+	 * @param  {Function} Функция для троттлинга
+	 * @param  {Number}   Время задержки 
+	 * @return {Function} Возвращает обернутую фун-ию
+	 */
 	function throttle (fn, time) {
+		var lastTime = 0;
 		return function () {
-			
-			var start = Date.now(),
-				lastTime = 0;
-			if(start - lastTime >= time ) {
-				console.log(123)
-				fn();
-				
+			if(Date.now() - lastTime >= time ) {
+				fn.apply(arguments);
+				lastTime = Date.now();
 			}
-			lastTime = Date.now();
+			
 		};
 	};
 
-	var filterInitBind = throttle(filterInit, 31000);
-	console.log(filterInitBind)
-	$(window).resize(function() {
-		 filterInitBind();
-	});
+	var filterInitBind = throttle(filterInit, 150);
+
 	
+	// Инициализация фильтра
+	 
 	filterInitBind();
 
+	$(window).resize(filterInitBind);
+	
 });
+
+
+
+/*'use strict';
+var CT = CT || {};
+
+(function ($, CT, UIkit) {
+
+	function Catalog () {
+		this.init();
+	};
+
+
+	Catalog.prototype.init = function () {
+		var _self = this;
+
+		this.responsiveFilter('.responsive-filter','.catalog-filter');
+		this.select2('.select2');
+		var responsiveFilterResize = _self.throttle(_self.responsiveFilter, 150);
+
+		$(window).on('resize', function () {
+			responsiveFilterResize('.responsive-filter','.catalog-filter')
+		});
+	};
+
+	Catalog.prototype.responsiveFilter = function (filterWrapper, filterBlock) {
+		var $fWrapper = $(filterWrapper),
+			$fBlock = $(filterBlock),
+			scrollWidth = parseInt(window.innerWidth) - parseInt(document.body.clientWidth);
+
+		if(($(window).width() + scrollWidth) < 960) {
+			if(!$fWrapper.hasClass('uk-offcanvas')) {
+				$fWrapper.addClass('uk-offcanvas');
+				$fWrapper.attr('id', 'offcanvas-filter');
+				$fWrapper
+					.find($fBlock)
+					.wrap('<div class="uk-offcanvas-bar"></div>');
+				};
+		} else {
+			console.log(555)
+			$fWrapper.removeClass('uk-offcanvas');
+			$fWrapper.removeAttr('id', 'offcanvas-filter');
+			if($fWrapper.find($fBlock).parent().hasClass('uk-offcanvas-bar')) {
+				$fWrapper
+					.find($fBlock)
+					.unwrap('<div class="uk-offcanvas-bar"></div>');
+			};
+		};
+
+
+	};
+
+
+	Catalog.prototype.select2 = function (className) {
+		$.each($(className), function (i, el) {
+			$(el).select2({
+				minimumResultsForSearch: -1,
+				theme: $(el).data('theme')
+			});
+		});
+	};
+
+	Catalog.prototype.throttle = function (fn, time) {
+		var lastTime = 0;
+		return function () {
+			if(Date.now() - lastTime >= time ) {
+				fn.apply(this, arguments);
+				lastTime = Date.now();
+			}
+		};
+	};
+
+	CT.initCatalog = function () {
+		return new Catalog();
+	}
+})(jQuery, CT, UIkit);*/

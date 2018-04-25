@@ -3,7 +3,7 @@ var CT = CT || {};
 
 $(function() {
 
-	// MAIN SLIDER
+	// Главный слайдер
 
 
 	function preloadImg (targetElement) {
@@ -41,7 +41,7 @@ $(function() {
 	preloadImg('div.preload');
 
 
-	// SHOW FORM
+	// Показывать форму в шапке
 
 	$('.js__search-form').on('click', function(e) {
 		e.preventDefault();
@@ -71,7 +71,8 @@ $(function() {
 	};
 
 
-	// SHOW MOBILE FORM
+	// Показывать форму на мобильных устройствах
+	
 	var $mobileForm = $('.mobile-form');
 
 	$('.js__show-form').on('click', function (e) {
@@ -80,7 +81,7 @@ $(function() {
 	})
 
 
-	// MASK FORM
+	// Маска формы
 
 	$('.js__input-phone').mask('+7 999 999-99-99', {clearIfNotMatch: true}).focus(function (e) {
 		if (!$(this).val()) {
@@ -89,7 +90,7 @@ $(function() {
 	});
 
 
-	//FORM VALIDATE
+	// Валидация формы
 
 	if($('form').is('.default-form')) {
 
@@ -107,7 +108,7 @@ $(function() {
 	};
 
 
-	// OPEN MOBILE SUBMENU
+	// Открытие мобильного подменю
 	
 	$('.js__menu-sublist-toggle').on('click', function (e) {
 		e.preventDefault();
@@ -129,7 +130,7 @@ $(function() {
 	});
 
 
-	// OPEN MOBILE FOOTER SUBMENU
+	// Открытие мобильного подменю в футере
 	
 	$('[data-role="toggle-list"] i').on('click', function (e) {
 		e.preventDefault();
@@ -142,13 +143,25 @@ $(function() {
 	});
 
 
-	// DISABLED UIKIT ANIMATION FOR MOBILE
+	// SELECT2 плагин
+
+	$.each($('.select2'), function (i, el) {
+		$(el).select2({
+			minimumResultsForSearch: -1,
+			theme: $(el).data('theme')
+		});
+	});
+	
+
+	// Отключение UIKIT анимации для мобильных устройств
 
 	UIkit.on('beforeready.uk.dom', function () {
 		if (UIkit.$win.width() < 767 && $('html').hasClass('uk-touch')) {
 			UIkit.$('[data-uk-scrollspy]').removeAttr('data-uk-scrollspy');
-		}
+		};
 	});
 
 });
+
+
 
