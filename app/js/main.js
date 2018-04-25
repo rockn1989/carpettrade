@@ -22,7 +22,7 @@ $(function() {
 					img = $('<img>').attr('src', src).on('load', function() {
 						_self.removeClass('preload');
 					});
-			} else {	
+			} else {
 
 				// Если картинка лежит через тег img
 
@@ -72,7 +72,7 @@ $(function() {
 
 
 	// Показывать форму на мобильных устройствах
-	
+
 	var $mobileForm = $('.mobile-form');
 
 	$('.js__show-form').on('click', function (e) {
@@ -109,7 +109,7 @@ $(function() {
 
 
 	// Открытие мобильного подменю
-	
+
 	$('.js__menu-sublist-toggle').on('click', function (e) {
 		e.preventDefault();
 		var self = $(this),
@@ -131,7 +131,7 @@ $(function() {
 
 
 	// Открытие мобильного подменю в футере
-	
+
 	$('[data-role="toggle-list"] i').on('click', function (e) {
 		e.preventDefault();
 		var self = $(this),
@@ -151,7 +151,7 @@ $(function() {
 			theme: $(el).data('theme')
 		});
 	});
-	
+
 
 	// Отключение UIKIT анимации для мобильных устройств
 
@@ -161,6 +161,21 @@ $(function() {
 		};
 	});
 
+	CT.initCatalog();
+
+var arr = [];
+var i;
+
+for (i = 10; i > 0; i--) { (function () {
+	arr.push(function() { return i*2 })
+})(i)
+}
+console.log(arr)
+	console.log([
+	    arr[0](),
+	    arr[1](),
+	    arr[2]()
+	])
 });
 
 

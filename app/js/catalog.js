@@ -22,13 +22,13 @@ $(function () {
 
 
 	// Фильтр Каталога: скрыть на мобильных устройствах
-	
+
 	var filter = $('.responsive-filter');
 
 	/**
 	 * @param {string} filter Класс/id фильтра
 	 */
-	function filterInit() {
+/*	function filterInit() {
 		var scrollWidth = parseInt(window.innerWidth) - parseInt(document.body.clientWidth);
 		if(($(window).width() + scrollWidth) < 960) {
 			if(!$(filter).hasClass('uk-offcanvas')) {
@@ -49,38 +49,38 @@ $(function () {
 
 		}
 	};
-
+*/
 
 	/**
 	 * @param  {Function} Функция для троттлинга
-	 * @param  {Number}   Время задержки 
+	 * @param  {Number}   Время задержки
 	 * @return {Function} Возвращает обернутую фун-ию
 	 */
-	function throttle (fn, time) {
+/*	function throttle (fn, time) {
 		var lastTime = 0;
 		return function () {
 			if(Date.now() - lastTime >= time ) {
 				fn.apply(arguments);
 				lastTime = Date.now();
 			}
-			
+
 		};
 	};
 
 	var filterInitBind = throttle(filterInit, 150);
 
-	
+
 	// Инициализация фильтра
-	 
+
 	filterInitBind();
 
-	$(window).resize(filterInitBind);
-	
+	$(window).resize(filterInitBind);*/
+
 });
 
 
 
-/*'use strict';
+'use strict';
 var CT = CT || {};
 
 (function ($, CT, UIkit) {
@@ -91,14 +91,13 @@ var CT = CT || {};
 
 
 	Catalog.prototype.init = function () {
-		var _self = this;
 
 		this.responsiveFilter('.responsive-filter','.catalog-filter');
-		this.select2('.select2');
-		var responsiveFilterResize = _self.throttle(_self.responsiveFilter, 150);
+
+		var responsiveFilterResize = this.throttle(this.responsiveFilter, 150);
 
 		$(window).on('resize', function () {
-			responsiveFilterResize('.responsive-filter','.catalog-filter')
+			responsiveFilterResize('.responsive-filter','.catalog-filter');
 		});
 	};
 
@@ -116,7 +115,6 @@ var CT = CT || {};
 					.wrap('<div class="uk-offcanvas-bar"></div>');
 				};
 		} else {
-			console.log(555)
 			$fWrapper.removeClass('uk-offcanvas');
 			$fWrapper.removeAttr('id', 'offcanvas-filter');
 			if($fWrapper.find($fBlock).parent().hasClass('uk-offcanvas-bar')) {
@@ -126,18 +124,8 @@ var CT = CT || {};
 			};
 		};
 
-
 	};
 
-
-	Catalog.prototype.select2 = function (className) {
-		$.each($(className), function (i, el) {
-			$(el).select2({
-				minimumResultsForSearch: -1,
-				theme: $(el).data('theme')
-			});
-		});
-	};
 
 	Catalog.prototype.throttle = function (fn, time) {
 		var lastTime = 0;
@@ -152,4 +140,6 @@ var CT = CT || {};
 	CT.initCatalog = function () {
 		return new Catalog();
 	}
-})(jQuery, CT, UIkit);*/
+})(jQuery, CT, UIkit);
+
+
