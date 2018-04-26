@@ -171,8 +171,6 @@ $(function () {
 
 	// DETAIL SLIDER
 
-	 var sliderPosition = $(window).width() >= 1245 ? true : false;
-
 	 $('.detail-product-slider').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -207,24 +205,37 @@ $(function () {
 		centerMode: false,
 		lazyLoad: 'progressive',
 		focusOnSelect: true,
-		vertical: sliderPosition,
+		vertical: true,
 		prevArrow: '<div class="btn-slide slick-prev"><i class="icon-up-arrow"></i></div>',
 		nextArrow: '<div class="btn-slide slick-next"><i class="icon-down-arrow"></i></div>',
 		responsive: [
 		{
-			breakpoint: 960,
+			breakpoint: 1245,
 			settings: {
-				slidesToShow: 3
+				slidesToShow: 3,
+				vertical: true
 			}
+		},
+		{
+			breakpoint: 1244,
+			settings: {
+				slidesToShow: 3,
+				vertical: false,
+		}
 		},
 		{
 			breakpoint: 767,
 			settings: {
-				slidesToShow: 2
+				slidesToShow: 2,
+				vertical: false,
 			}
 		},
 	]
 	});
+
+$(window).on('orientationchange', function () {
+	$('.detail-product-preview-slider').slick('resize');
+})
 
 
 	// SHOPS DETAIL SLIDER

@@ -1066,6 +1066,7 @@ table.product-options td {
 }
 
 .additional-services__icon {
+  margin-top: 7px;
   margin-right: 9.5%;
   float: left;
 }
@@ -2944,6 +2945,7 @@ table.product-options td {
   }
 
   .additional-services__icon {
+    margin-top: 2px;
     margin-right: 5%;
   }
 
@@ -2993,7 +2995,7 @@ table.product-options td {
   .progress__img {
     margin-right: 6%;
     margin-top: 4px;
-    min-width: auto;
+    min-width: none;
     max-width: 36px;
   }
 
@@ -3286,6 +3288,11 @@ table.product-options td {
 
   .map-slider .slick-dots li.slick-active button:before {
     width: 15px;
+  }
+
+  .map-slider .slick-dots button {
+    width: 15px;
+    height: 15px;
   }
 
   .map-slider .slick-dots button:before {
@@ -3694,6 +3701,7 @@ table.product-options td {
   }
 
   .additional-services__icon {
+    margin-top: 7px;
     margin-right: 9.5%;
   }
 
@@ -3727,6 +3735,7 @@ table.product-options td {
   }
 
   .progress__img {
+    margin-top: 2px;
     margin-right: 12%;
     min-width: 72px;
     max-width: auto;
@@ -3905,8 +3914,8 @@ table.product-options td {
   .map-slider .slick-dots button:before {
     width: 20px;
     height: 2px;
-    -webkit-border-radius: none;
-    border-radius: none;
+    -webkit-border-radius: unset;
+    border-radius: unset;
     background-color: #000000;
   }
 

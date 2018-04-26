@@ -28,7 +28,7 @@ $(function () {
 	/**
 	 * @param {string} filter Класс/id фильтра
 	 */
-/*	function filterInit() {
+	function filterInit() {
 		var scrollWidth = parseInt(window.innerWidth) - parseInt(document.body.clientWidth);
 		if(($(window).width() + scrollWidth) < 960) {
 			if(!$(filter).hasClass('uk-offcanvas')) {
@@ -49,14 +49,14 @@ $(function () {
 
 		}
 	};
-*/
+
 
 	/**
 	 * @param  {Function} Функция для троттлинга
 	 * @param  {Number}   Время задержки
 	 * @return {Function} Возвращает обернутую фун-ию
 	 */
-/*	function throttle (fn, time) {
+	function throttle (fn, time) {
 		var lastTime = 0;
 		return function () {
 			if(Date.now() - lastTime >= time ) {
@@ -74,13 +74,13 @@ $(function () {
 
 	filterInitBind();
 
-	$(window).resize(filterInitBind);*/
+	$(window).resize(filterInitBind);
 
 });
 
 
 
-'use strict';
+/*'use strict';
 var CT = CT || {};
 
 (function ($, CT, UIkit) {
@@ -140,6 +140,7 @@ var CT = CT || {};
 	CT.initCatalog = function () {
 		return new Catalog();
 	}
-})(jQuery, CT, UIkit);
 
+})(jQuery, CT, UIkit);
+*/
 

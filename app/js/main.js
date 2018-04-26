@@ -60,7 +60,6 @@ $(function() {
 				btn = document.querySelector('js__search-form');
 
 		if((e.which == 27) || (e.target != input && e.target != btn) && $(form).hasClass('show')) {
-			console.log(e.target)
 			$(form).fadeOut('350', function() {
 				$(input).val('');
 				$(this).removeClass('show');
@@ -161,21 +160,6 @@ $(function() {
 		};
 	});
 
-	CT.initCatalog();
-
-var arr = [];
-var i;
-
-for (i = 10; i > 0; i--) { (function () {
-	arr.push(function() { return i*2 })
-})(i)
-}
-console.log(arr)
-	console.log([
-	    arr[0](),
-	    arr[1](),
-	    arr[2]()
-	])
 });
 
 

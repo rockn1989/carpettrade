@@ -464,6 +464,10 @@
 			width: auto;
 			height: auto;
 			padding: 0;
+			@media @mob-w {
+				width: 15px;
+				height: 15px;
+			}
 			&:before {
 				content: '';
 				display: block;
@@ -481,7 +485,7 @@
 				@media @desk-w {
 					width: 20px;
 					height: 2px;
-					border-radius: none;
+					border-radius: unset;
 					background-color: #000000;
 				}
 
